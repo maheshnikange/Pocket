@@ -1,0 +1,147 @@
+{% extends 'vendor/vendor-base.html' %}
+
+{% block title %}Category List{% endblock %}
+
+{% block content %}
+{%load static%}
+<div class="main-content-inner">
+    <!-- main-content-wrap -->
+    <div class="main-content-wrap">
+        <div class="flex items-center flex-wrap justify-between gap20 mb-27">
+            <h3>Add Service </h3>
+            
+        </div>
+        <!-- add-new-user -->
+        <form method="post" action="{% url 'vendor_service_create'%} " id="add-service-form" class="form-add-new-user form-style-2">
+            {% csrf_token %}
+            <div class="wg-box">
+                <div class="row" style="width: 100%;">
+                    <div class="col-md-4">
+                        <fieldset class="name mb-24">
+                            <div class="body-title mb-10">Select Shop</div>
+                            <div class="select">
+                                <select id="shop-select" class="" onchange="populateCategories()" name="shop">
+                                    <option value="">Select Shop</option>
+                                    {% for shop in shops %}
+                                        <option value="{{ shop.pk }}">{{ shop.name }}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                        </fieldset>
+                    </div>
+                    <div class="col-md-4">
+                        <fieldset class="name mb-24">
+                            <div class="body-title mb-10">Select Category</div>
+                            <div class="select" onchange="populateServices()">
+                                <select id="category-select" class="">
+                                    <option value="">Select Category</option>
+                                </select>
+                            </div>
+                        </fieldset>
+                    </div>
+                    <div class="col-md-4">
+                        <fieldset class="name mb-24">
+                            <div class="body-title mb-10">Select Service</div>
+                            <div class="select">
+                                <select id="service-select" class="" name="service"  onchange="populateServicePrice()">
+                                    <option value="">Select Service</option>
+                                </select>
+                            </div>
+                        </fieldset>
+                    </div>
+                    <div class="col-md-4">
+                        <fieldset class="name">
+                            <div class="body-title">Price <span class="tf-color-1">*</span></div>
+                            <input id="service_price" class="flex-grow" type="number" placeholder="Service price" name="name" tabindex="0" value="{{ category.name }}" aria-required="true" required="" disabled="true">
+                        </fieldset>
+                    </div>
+                    <div class="col-md-4">
+                        <fieldset class="name mb-24">
+                            <div class="body-title mb-10">Select Service paid</div>
+                            <div class="select">
+                                <select id="service-select" class="" name="paid">
+                                    <option value="False">No</option>
+                                    <option value="True">Yes</option>
+                                </select>
+                            </div>
+                        </fieldset>
+                    </div>
+                </div>
+            </div>
+            <div class="bot">
+                <button class="tf-button w180" type="submit">Submit</button>
+            </div>
+        </form>
+        <!-- /add-new-user -->
+    </div>
+    <!-- /main-content-wrap -->
+</div>
+
+<script>
+    function populateCategories() {
+        const shopId = document.getElementById('shop-select').value;
+        const categorySelect = document.getElementById('category-select');
+        const serviceSelect = document.getElementById('service-select');
+
+        // Clear previous options
+        categorySelect.innerHTML = '<option value=""></option>';
+        serviceSelect.innerHTML = '<option value=""></option>';
+
+        if (shopId) {
+            // Make an AJAX request to fetch categories for the selected shop
+            fetch(`/vendor/get-shop-categories/${shopId}/`)
+                .then(response => response.json())
+                .then(data => {
+                    data.forEach(category => {
+                        const option = document.createElement('option');
+                        option.value = category.id;
+                        option.text = category.name;
+                        categorySelect.add(option);
+                    });
+                })
+                .catch(error => console.error('Error fetching categories:', error));
+        }
+    }
+    function populateServices() {
+        const categoryId = document.getElementById('category-select').value;
+        const serviceSelect = document.getElementById('service-select');
+        const serviceprice = document.getElementById('service_price');
+
+        // Clear previous options
+        serviceSelect.innerHTML = '<option value="">Select Service</option>';
+
+        if (categoryId) {
+            // Make an AJAX request to fetch services for the selected category
+            fetch(`/vendor/get-category-services/${categoryId}/`)
+                .then(response => response.json())
+                .then(data => {
+                    data.forEach(service => {
+                        const option = document.createElement('option');
+                        option.value = service.id;
+                        option.text = service.name;
+                        serviceSelect.add(option);
+                    });
+                })
+                .catch(error => console.error('Error fetching services:', error));
+        }
+    }
+    function populateServicePrice() {
+        
+        const serviceID = document.getElementById('service-select').value;
+        const priceEle = document.getElementById('service_price');
+
+
+        if (serviceID) {
+            console.log(priceEle)
+            fetch(`/vendor/get-service-price/${serviceID}/`)
+                .then(response => response.json())
+                .then(data => {
+                        priceEle.value = data.price
+                    ;
+                })
+                .catch(error => console.error('Error fetching services:', error));
+        }populateServicePrice
+    }
+</script>
+
+{% endblock %}

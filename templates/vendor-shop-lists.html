@@ -1,0 +1,2139 @@
+{% extends 'base.html' %}
+{% block title %}Service List{% endblock %}
+{%load static%}
+
+{% block content %}
+        <div id="page_wrapper" class="bg-light">
+            <!--==================== Header Section Start ====================-->
+            <header class="ecommerce-header">
+
+                <div class="middle-header d-none d-lg-block py-4 bg-white">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="fistmab">
+                                    <p id="p">Search Across</p><b id="b">
+                                        <span1 id="span1">Professional Car Dealer<br /> Bike Rental<br />New And Old
+                                            Truck<br />E-Rickshaw Battery<br />Modern Electric Bicycle</span1>
+                                    </b>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row align-items-center">
+                            <div class="col-lg-6 col-md-9" style="width:25%;">
+                                <div class="product-search-one">
+                                    <form class="form-inline search-pill-shape" action="#" method="post"
+                                        style="border:2px solid black; border-radius:5px; box-shadow:2px 2px;">
+                                        <div class="raa" style="position: relative;font-size: x-large;left: 20px;"><i
+                                                class="fa fa-map-marker"></i></div>
+                                        <input type="text" class="form-control search-field" name="search"
+                                            placeholder="Delhi" id="rz" style="margin-left:10px;">
+
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-9" style="width:40%;">
+                                <div class="product-search-one">
+                                    <form class="form-inline search-pill-shape" action="#" method="post"
+                                        style="border:2px solid black; border-radius:5px; box-shadow:2px 2px;">
+                                        <input type="text" class="form-control search-field" name="search"
+                                            placeholder="Search For Car / Bike / Truck & Many More..." id="rz"
+                                            style="margin-left:10px; padding:10px;">
+                                        <button type="submit" name="submit" class="search-submit"><i
+                                                class="flaticon-search flat-mini text-white"></i></button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <style>
+                    #p {
+                        height: 35px;
+                        float: left;
+                        margin-right: 0.3em;
+                        margin-top: 0px;
+                        font-size: 30px;
+                        color: black;
+                        font-weight: 700;
+                    }
+
+                    #b {
+                        float: left;
+                        overflow: hidden;
+                        position: relative;
+                        height: 50px;
+                        font: normal 33px/46px Arial, sans-serif;
+
+                    }
+
+                    #span1 {
+                        display: inline-block;
+                        color: #f76d1d;
+                        position: relative;
+                        white-space: nowrap;
+                        top: 0;
+                        left: 0;
+                        -webkit-animation: move 5s;
+                        -webkit-animation-iteration-count: infinite;
+                        -webkit-animation-delay: 1s;
+                        font: normal 31px/46px !important;
+                        font-weight: 600;
+
+                    }
+
+                    @keyframes move {
+                        0% {
+                            top: 0px;
+                        }
+
+                        20% {
+                            top: -50px;
+                        }
+
+                        40% {
+                            top: -100px;
+                        }
+
+                        60% {
+                            top: -150px;
+                        }
+
+                        80% {
+                            top: -200px;
+                        }
+                    }
+                </style>
+                <div class="main-nav d-none d-lg-block bg-extra1">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-3 col-xl-3">
+                                <div
+                                    class="categories-menu-wrapper category-hover-open h-100 text-dark bg-primary position-relative">
+                                    <div class="category-title-wrapper align-items-center d-flex">
+                                        <i class="flaticon-menu me-3 bg-dark p-3 text-white flat-mini"></i>
+                                        <span class="font-400 higlight-font font-seventeen text-white">All
+                                            Depeartments</span>
+                                    </div>
+                                    <div class="bg-white h-100 categories-menu">
+                                        <ul class="menu">
+                                            <li class="highlight"><a href="#">Values of the day</a></li>
+                                            <li class="highlight"><a href="#">Top most offers</a></li>
+                                            <li class="menu-item-has-children"><a href="#">Deal of the day</a></li>
+                                            <li class="menu-item-has-children"><a href="#">Shop by category</a></li>
+                                            <li class="menu-item-has-children"><a href="#">Bike auto parts</a></li>
+                                            <li class="menu-item-has-children"><a href="#">Bike helmets</a></li>
+                                            <li class="menu-item-has-children"><a href="#">Bike Accessories</a></li>
+                                            <li class="menu-item-has-children"><a href="#">Car sterio system</a></li>
+                                            <li class="menu-item-has-children"><a href="#">Car washing service</a></li>
+                                            <li class="menu-item-has-children"><a href="#">Car Tyers</a></li>
+                                            <li class="menu-item-has-children"><a href="#">Car Accessories</a></li>
+                                            <li class="menu-item-has-children"><a href="#">Car wiper's</a></li>
+                                            <li class="menu-item-has-children"><a href="#">Show all</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-9 col-xl-9" style="background-color:green;">
+                                <nav class="navbar navbar-expand-lg nav-white nav-secondary-hover">
+                                    <a class="navbar-brand d-lg-none" href="#"><img class="nav-logo"
+                                            src="assets/images/logo/1.png" alt="Image not found !"></a>
+                                    <button class="navbar-toggler" type="button" data-toggle="collapse"
+                                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                                        aria-expanded="false" aria-label="Toggle navigation">
+                                        <i class="flaticon-menu-2 flat-small text-primary"></i>
+                                    </button>
+                                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                                        <ul class="navbar-nav">
+                                            <li class="nav-item highlight-item">
+                                                <a class="nav-link" href="#">New Arrival<span
+                                                        class="tooltip">New</span></a>
+                                            </li>
+                                            <li class="nav-item dropdown">
+                                                <a class="nav-link dropdown-toggle" href="index.html">Home</a>
+                                            </li>
+                                            <li class="nav-item dropdown mega-dropdown">
+                                                <a class="nav-link dropdown-toggle" href="#">Shop By Category</a>
+                                                <ul class="dropdown-menu mega-dropdown-menu">
+                                                    <li class="mega-container">
+                                                        <div class="row row-cols-lg-4 row-cols-sm-2 row-cols-1">
+                                                            <div class="col">
+                                                                <span
+                                                                    class="d-inline-block px-3 font-600 text-uppercase text-secondary pb-2">Product
+                                                                    Grid View</span>
+                                                                <ul>
+                                                                    <li><a class="dropdown-item"
+                                                                            href="shop-grid-full.html">Shop Grid
+                                                                            Full</a></li>
+                                                                    <li><a class="dropdown-item"
+                                                                            href="shop-grid-left-sidebar.html">Shop Grid
+                                                                            Modern</a></li>
+                                                                    <li><a class="dropdown-item"
+                                                                            href="shop-grid-left-sidebar-1.html">Shop
+                                                                            Grid Left Sidebar 1</a></li>
+                                                                    <li><a class="dropdown-item"
+                                                                            href="shop-grid-left-sidebar-2.html">Shop
+                                                                            Grid Left Sidebar 2</a></li>
+                                                                    <li><a class="dropdown-item"
+                                                                            href="shop-grid-left-sidebar-3.html">Shop
+                                                                            Grid Left Sidebar 3</a></li>
+                                                                    <li><a class="dropdown-item"
+                                                                            href="shop-grid-right-sidebar-1.html">Shop
+                                                                            Grid Right Sidebar 1</a></li>
+                                                                    <li><a class="dropdown-item"
+                                                                            href="shop-grid-right-sidebar-2.html">Shop
+                                                                            Grid Right Sidebar 2</a></li>
+                                                                    <li><a class="dropdown-item"
+                                                                            href="shop-grid-right-sidebar-3.html">Shop
+                                                                            Grid Right Sidebar 3</a></li>
+                                                                </ul>
+                                                            </div>
+                                                            <div class="col">
+                                                                <span
+                                                                    class="d-inline-block px-3 font-600 text-uppercase text-secondary pb-2">Product
+                                                                    List View</span>
+                                                                <ul>
+                                                                    <li><a class="dropdown-item"
+                                                                            href="shop-list-full.html">Shop List
+                                                                            Full</a></li>
+                                                                    <li><a class="dropdown-item"
+                                                                            href="shop-list-left-sidebar.html">Shop Grid
+                                                                            Modern</a></li>
+                                                                    <li><a class="dropdown-item"
+                                                                            href="shop-list-left-sidebar-1.html">Shop
+                                                                            List Left Sidebar 1</a></li>
+                                                                    <li><a class="dropdown-item"
+                                                                            href="shop-list-left-sidebar-2.html">Shop
+                                                                            List Left Sidebar 2</a></li>
+                                                                    <li><a class="dropdown-item"
+                                                                            href="shop-list-left-sidebar-3.html">Shop
+                                                                            List Left Sidebar 3</a></li>
+                                                                    <li><a class="dropdown-item"
+                                                                            href="shop-list-right-sidebar-1.html">Shop
+                                                                            List Right Sidebar 1</a></li>
+                                                                    <li><a class="dropdown-item"
+                                                                            href="shop-list-right-sidebar-2.html">Shop
+                                                                            List Right Sidebar 2</a></li>
+                                                                    <li><a class="dropdown-item"
+                                                                            href="shop-list-right-sidebar-3.html">Shop
+                                                                            List Right Sidebar 3</a></li>
+                                                                </ul>
+                                                            </div>
+                                                            <div class="col">
+                                                                <span
+                                                                    class="d-inline-block px-3 font-600 text-uppercase text-secondary pb-2">Woocommerce
+                                                                    Pages</span>
+                                                                <ul>
+                                                                    <li><a class="dropdown-item"
+                                                                            href="cart.html">Cart</a></li>
+                                                                    <li><a class="dropdown-item"
+                                                                            href="checkout.html">Checkout</a></li>
+                                                                    <li><a class="dropdown-item"
+                                                                            href="my-account.html">My Account</a></li>
+                                                                    <li><a class="dropdown-item"
+                                                                            href="registration.html">Registration</a>
+                                                                    </li>
+                                                                    <li><a class="dropdown-item"
+                                                                            href="wishlist.html">Wishlist</a></li>
+                                                                    <li><a class="dropdown-item"
+                                                                            href="single-shop.html">Single Shop 1</a>
+                                                                    </li>
+                                                                    <li><a class="dropdown-item"
+                                                                            href="single-shop-2.html">Single Shop 2</a>
+                                                                    </li>
+                                                                    <li><a class="dropdown-item"
+                                                                            href="single-shop-3.html">Single Shop 3</a>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                            <div class="col">
+                                                                <span
+                                                                    class="d-inline-block px-3 font-600 text-uppercase text-secondary pb-2">Product
+                                                                    Thumbs</span>
+                                                                <ul>
+                                                                    <li><a class="dropdown-item"
+                                                                            href="hover-bg-light.html">Hover Background
+                                                                            Light</a></li>
+                                                                    <li><a class="dropdown-item"
+                                                                            href="hover-shadow-active.html">Hover Shadow
+                                                                            Active</a></li>
+                                                                    <li><a class="dropdown-item"
+                                                                            href="hover-image-zoom.html">Hover Image
+                                                                            Zoom</a></li>
+                                                                    <li><a class="dropdown-item"
+                                                                            href="hover-btn-slide-1.html">Hover Btn
+                                                                            Slide 1</a></li>
+                                                                    <li><a class="dropdown-item"
+                                                                            href="hover-btn-slide-2.html">Hover Btn
+                                                                            Slide 2</a></li>
+                                                                    <li><a class="dropdown-item"
+                                                                            href="hover-btn-slide-3.html">Hover Btn
+                                                                            Slide 3</a></li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li class="nav-item dropdown">
+                                                <a class="nav-link dropdown-toggle" href="#">Explore New Service<span
+                                                        class="tooltip">Check</span></a>
+                                            </li>
+                                            <li class="nav-item dropdown">
+                                                <a class="nav-link dropdown-toggle" href="#">Deal Of The month</a>
+                                            </li>
+                                        </ul>
+                                        <a href="#" class="ml-auto text-white font-400 d-none d-xl-block">Upto 20% Off
+                                            (On first service)</a>
+                                    </div>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="header-sticky bg-white py-10">
+                    <div class="container">
+                        <div class="row align-items-center">
+                            <div class="col-xxl-2 col-xl-2 col-lg-3 col-3 order-lg-1">
+                                <div class="d-flex align-items-center h-100 md-py-10">
+                                    <div class="nav-leftpush-overlay">
+                                        <nav class="navbar navbar-expand-lg nav-general nav-primary-hover">
+                                            <button type="button" class="push-nav-toggle d-lg-none border-0">
+                                                <i class="flaticon-menu-2 flat-small text-primary"></i>
+                                            </button>
+                                            <div class="navbar-slide-push transation-this">
+                                                <div
+                                                    class="login-signup bg-footer d-flex justify-content-between py-10 px-20 align-items-center">
+                                                    <a href="#" class="d-flex align-items-center text-white">
+                                                        <span><img src="assets/images/logo/logo-new.png" alt=""></span>
+                                                    </a>
+                                                    <span class="slide-nav-close"><i
+                                                            class="flaticon-cancel flat-mini text-black-50"></i></span>
+                                                </div>
+                                                <div class="menu-and-category">
+                                                    <ul class="nav nav-pills wc-tabs" id="menu-and-category"
+                                                        role="tablist">
+                                                        <li class="nav-item" role="presentation">
+                                                            <a class="nav-link active" id="pills-push-menu-tab"
+                                                                data-bs-toggle="pill" href="#pills-push-menu" role="tab"
+                                                                aria-controls="pills-push-menu"
+                                                                aria-selected="true">Menu</a>
+                                                        </li>
+                                                        <li class="nav-item" role="presentation">
+                                                            <a class="nav-link" id="pills-push-categories-tab"
+                                                                data-bs-toggle="pill" href="#pills-push-categories"
+                                                                role="tab" aria-controls="pills-push-categories"
+                                                                aria-selected="true">Categories</a>
+                                                        </li>
+                                                    </ul>
+                                                    <div class="tab-content" id="menu-and-categoryContent">
+                                                        <div class="tab-pane fade show active woocommerce-Tabs-panel woocommerce-Tabs-panel--description"
+                                                            id="pills-push-menu" role="tabpanel"
+                                                            aria-labelledby="pills-push-menu-tab">
+                                                            <div class="push-navbar">
+                                                                <ul class="navbar-nav">
+                                                                    <li class="nav-item highlight-item"><a
+                                                                            class="nav-link" href="#">Flash Deal</a>
+                                                                    </li>
+                                                                    <li class="nav-item highlight-item"><a
+                                                                            class="nav-link" href="#">New Arrival</a>
+                                                                    </li>
+                                                                    <li class="nav-item dropdown">
+                                                                        <a class="nav-link dropdown-toggle"
+                                                                            href="index.html">Home</a>
+                                                                        <ul class="dropdown-menu">
+                                                                            <li><a class="dropdown-item"
+                                                                                    href="index.html">Classic
+                                                                                    Fashion</a></li>
+                                                                            <li><a class="dropdown-item"
+                                                                                    href="index-optical-shop.html">Optical
+                                                                                    Shop</a></li>
+                                                                            <li><a class="dropdown-item"
+                                                                                    href="index-food-corner.html">Food
+                                                                                    Corner</a></li>
+                                                                            <li><a class="dropdown-item"
+                                                                                    href="index-cosmetic-store.html">Cosmetic
+                                                                                    Store</a></li>
+                                                                        </ul>
+                                                                    </li>
+                                                                    <li class="nav-item dropdown mega-dropdown">
+                                                                        <a class="nav-link dropdown-toggle"
+                                                                            href="#">Shop</a>
+                                                                        <ul class="dropdown-menu mega-dropdown-menu">
+                                                                            <li class="mega-container">
+                                                                                <div
+                                                                                    class="row row-cols-lg-4 row-cols-sm-2 row-cols-1">
+                                                                                    <div class="col">
+                                                                                        <span
+                                                                                            class="d-inline-block px-3 font-600 text-uppercase text-secondary pb-2">Product
+                                                                                            Grid View</span>
+                                                                                        <ul>
+                                                                                            <li><a class="dropdown-item"
+                                                                                                    href="shop-grid-full.html">Shop
+                                                                                                    Grid Full</a></li>
+                                                                                            <li><a class="dropdown-item"
+                                                                                                    href="shop-grid-left-sidebar.html">Shop
+                                                                                                    Grid Left
+                                                                                                    Sidebar</a></li>
+                                                                                            <li><a class="dropdown-item"
+                                                                                                    href="shop-grid-left-sidebar-2.html">Shop
+                                                                                                    Grid Left Sidebar
+                                                                                                    2</a></li>
+                                                                                            <li><a class="dropdown-item"
+                                                                                                    href="shop-grid-left-sidebar-3.html">Shop
+                                                                                                    Grid Left Sidebar
+                                                                                                    3</a></li>
+                                                                                            <li><a class="dropdown-item"
+                                                                                                    href="shop-grid-right-sidebar.html">Shop
+                                                                                                    Grid Right
+                                                                                                    Sidebar</a></li>
+                                                                                            <li><a class="dropdown-item"
+                                                                                                    href="shop-grid-right-sidebar-2.html">Shop
+                                                                                                    Grid Right Sidebar
+                                                                                                    2</a></li>
+                                                                                            <li><a class="dropdown-item"
+                                                                                                    href="shop-grid-right-sidebar-3.html">Shop
+                                                                                                    Grid Right Sidebar
+                                                                                                    3</a></li>
+                                                                                        </ul>
+                                                                                    </div>
+                                                                                    <div class="col">
+                                                                                        <span
+                                                                                            class="d-inline-block px-3 font-600 text-uppercase text-secondary pb-2">Product
+                                                                                            List View</span>
+                                                                                        <ul>
+                                                                                            <li><a class="dropdown-item"
+                                                                                                    href="shop-list-full.html">Shop
+                                                                                                    List Full</a></li>
+                                                                                            <li><a class="dropdown-item"
+                                                                                                    href="shop-list-left-sidebar.html">Shop
+                                                                                                    List Left
+                                                                                                    Sidebar</a></li>
+                                                                                            <li><a class="dropdown-item"
+                                                                                                    href="shop-list-left-sidebar-2.html">Shop
+                                                                                                    List Left Sidebar
+                                                                                                    2</a></li>
+                                                                                            <li><a class="dropdown-item"
+                                                                                                    href="shop-list-left-sidebar-3.html">Shop
+                                                                                                    List Left Sidebar
+                                                                                                    3</a></li>
+                                                                                            <li><a class="dropdown-item"
+                                                                                                    href="shop-list-right-sidebar.html">Shop
+                                                                                                    List Right
+                                                                                                    Sidebar</a></li>
+                                                                                            <li><a class="dropdown-item"
+                                                                                                    href="shop-list-right-sidebar-2.html">Shop
+                                                                                                    List Right Sidebar
+                                                                                                    2</a></li>
+                                                                                            <li><a class="dropdown-item"
+                                                                                                    href="shop-list-right-sidebar-3.html">Shop
+                                                                                                    List Right Sidebar
+                                                                                                    3</a></li>
+                                                                                        </ul>
+                                                                                    </div>
+                                                                                    <div class="col">
+                                                                                        <span
+                                                                                            class="d-inline-block px-3 font-600 text-uppercase text-secondary pb-2">Woocommerce
+                                                                                            Pages</span>
+                                                                                        <ul>
+                                                                                            <li><a class="dropdown-item"
+                                                                                                    href="cart.html">Cart</a>
+                                                                                            </li>
+                                                                                            <li><a class="dropdown-item"
+                                                                                                    href="checkout.html">Checkout</a>
+                                                                                            </li>
+                                                                                            <li><a class="dropdown-item"
+                                                                                                    href="my-account.html">My
+                                                                                                    Account</a></li>
+                                                                                            <li><a class="dropdown-item"
+                                                                                                    href="registration.html">Registration</a>
+                                                                                            </li>
+                                                                                            <li><a class="dropdown-item"
+                                                                                                    href="wishlist.html">Wishlist</a>
+                                                                                            </li>
+                                                                                            <li><a class="dropdown-item"
+                                                                                                    href="single-shop.html">Single
+                                                                                                    Shop 1</a></li>
+                                                                                            <li><a class="dropdown-item"
+                                                                                                    href="single-shop-2.html">Single
+                                                                                                    Shop 2</a></li>
+                                                                                            <li><a class="dropdown-item"
+                                                                                                    href="single-shop-3.html">Single
+                                                                                                    Shop 3</a></li>
+                                                                                        </ul>
+                                                                                    </div>
+                                                                                    <div class="col">
+                                                                                        <span
+                                                                                            class="d-inline-block px-3 font-600 text-uppercase text-secondary pb-2">Product
+                                                                                            Thumbs</span>
+                                                                                        <ul>
+                                                                                            <li><a class="dropdown-item"
+                                                                                                    href="hover-bg-light.html">Hover
+                                                                                                    Background Light</a>
+                                                                                            </li>
+                                                                                            <li><a class="dropdown-item"
+                                                                                                    href="hover-shadow-active.html">Hover
+                                                                                                    Shadow Active</a>
+                                                                                            </li>
+                                                                                            <li><a class="dropdown-item"
+                                                                                                    href="hover-image-zoom.html">Hover
+                                                                                                    Image Zoom</a></li>
+                                                                                            <li><a class="dropdown-item"
+                                                                                                    href="hover-btn-slide-1.html">Hover
+                                                                                                    Btn Slide 1</a></li>
+                                                                                            <li><a class="dropdown-item"
+                                                                                                    href="hover-btn-slide-2.html">Hover
+                                                                                                    Btn Slide 2</a></li>
+                                                                                            <li><a class="dropdown-item"
+                                                                                                    href="hover-btn-slide-3.html">Hover
+                                                                                                    Btn Slide 3</a></li>
+                                                                                        </ul>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </li>
+                                                                    <li class="nav-item dropdown">
+                                                                        <a class="nav-link dropdown-toggle"
+                                                                            href="#">Pages</a>
+                                                                        <ul class="dropdown-menu">
+                                                                            <li class="dropdown">
+                                                                                <a class="dropdown-toggle dropdown-item"
+                                                                                    href="portfolio-filter-column-four.html">Portfolio</a>
+                                                                                <ul class="dropdown-menu">
+                                                                                    <li><a class="dropdown-item"
+                                                                                            href="portfolio-column-three.html">Portfolio
+                                                                                            Column Three</a></li>
+                                                                                    <li><a class="dropdown-item"
+                                                                                            href="portfolio-column-four.html">Portfolio
+                                                                                            Column Four</a></li>
+                                                                                    <li><a class="dropdown-item"
+                                                                                            href="portfolio-full-width.html">Portfolio
+                                                                                            Full Width</a></li>
+                                                                                    <li><a class="dropdown-item"
+                                                                                            href="portfolio-filter-column-three.html">Portfolio
+                                                                                            Filter Column Three</a></li>
+                                                                                    <li><a class="dropdown-item"
+                                                                                            href="portfolio-filter-column-four.html">Portfolio
+                                                                                            Filter Column Four</a></li>
+                                                                                    <li><a class="dropdown-item"
+                                                                                            href="portfolio-single-slider-layout.html">Portfolio
+                                                                                            Single Slider Layout</a>
+                                                                                    </li>
+                                                                                </ul>
+                                                                            </li>
+                                                                            <li class="dropdown"> <a
+                                                                                    class="dropdown-toggle dropdown-item"
+                                                                                    href="general-support.html">Help and
+                                                                                    Support</a>
+                                                                                <ul class="dropdown-menu">
+                                                                                    <li><a class="dropdown-item"
+                                                                                            href="how-it-work.html">How
+                                                                                            It Work</a></li>
+                                                                                    <li><a class="dropdown-item"
+                                                                                            href="general-support.html">General
+                                                                                            Support</a></li>
+                                                                                    <li><a class="dropdown-item"
+                                                                                            href="help-center.html">Help
+                                                                                            Center</a></li>
+                                                                                    <li><a class="dropdown-item"
+                                                                                            href="support-article-details.html">Support
+                                                                                            Article</a></li>
+                                                                                    <li><a class="dropdown-item"
+                                                                                            href="terms-and-condition.html">Terms
+                                                                                            & Condition</a></li>
+                                                                                </ul>
+                                                                            </li>
+                                                                            <li><a class="dropdown-item"
+                                                                                    href="about-owner.html">About
+                                                                                    Owner</a></li>
+                                                                            <li><a class="dropdown-item"
+                                                                                    href="about.html">About Us 1</a>
+                                                                            </li>
+                                                                            <li><a class="dropdown-item"
+                                                                                    href="about-2.html">About Us 2</a>
+                                                                            </li>
+                                                                            <li><a class="dropdown-item"
+                                                                                    href="service.html">Services</a>
+                                                                            </li>
+                                                                            <li><a class="dropdown-item"
+                                                                                    href="gallery.html">Gallery</a></li>
+                                                                            <li><a class="dropdown-item"
+                                                                                    href="404.html">404 Page</a></li>
+                                                                        </ul>
+                                                                    </li>
+                                                                    <li class="nav-item dropdown">
+                                                                        <a class="nav-link dropdown-toggle"
+                                                                            href="blog-grid-left-sidebar.html">Blog</a>
+                                                                        <ul class="dropdown-menu">
+                                                                            <li><a class="dropdown-item"
+                                                                                    href="blog-grid-left-sidebar.html">Left
+                                                                                    Sidebar Grid</a></li>
+                                                                            <li><a class="dropdown-item"
+                                                                                    href="blog-list-left-sidebar.html">Left
+                                                                                    Sidebar List</a></li>
+                                                                            <li><a class="dropdown-item"
+                                                                                    href="blog-grid-right-sidebar.html">Right
+                                                                                    Sidebar Grid</a></li>
+                                                                            <li><a class="dropdown-item"
+                                                                                    href="blog-list-right-sidebar.html">Right
+                                                                                    Sidebar List</a></li>
+                                                                            <li><a class="dropdown-item"
+                                                                                    href="blog-missionary-grid.html">Missionary
+                                                                                    Grid</a></li>
+                                                                            <li><a class="dropdown-item"
+                                                                                    href="blog-video-grid.html">Video
+                                                                                    Grid</a></li>
+                                                                            <li><a class="dropdown-item"
+                                                                                    href="blog-single-left-sidebar.html">Blog
+                                                                                    Single Left Sidebar</a></li>
+                                                                            <li><a class="dropdown-item"
+                                                                                    href="blog-single-right-sidebar.html">Blog
+                                                                                    Single Right Sidebar</a></li>
+                                                                        </ul>
+                                                                    </li>
+                                                                    <li class="nav-item dropdown">
+                                                                        <a class="nav-link dropdown-toggle"
+                                                                            href="#">Elements</a>
+                                                                        <ul class="dropdown-menu">
+                                                                            <li class="dropdown">
+                                                                                <a class="dropdown-toggle dropdown-item"
+                                                                                    href="#">Product Thumbnails</a>
+                                                                                <ul class="dropdown-menu">
+                                                                                    <li><a class="dropdown-item"
+                                                                                            href="element-product-grid-view.html">Grid
+                                                                                            View Style</a></li>
+                                                                                    <li><a class="dropdown-item"
+                                                                                            href="element-product-list-view.html">List
+                                                                                            View Style</a></li>
+                                                                                </ul>
+                                                                            </li>
+                                                                            <li><a class="dropdown-item"
+                                                                                    href="element-carousel.html">Product
+                                                                                    Carousel</a></li>
+                                                                            <li><a class="dropdown-item"
+                                                                                    href="element-tab.html">Product
+                                                                                    Tab</a></li>
+                                                                            <li><a class="dropdown-item"
+                                                                                    href="element-typography.html">Typography</a>
+                                                                            </li>
+                                                                            <li><a class="dropdown-item"
+                                                                                    href="element-banner.html">Banner
+                                                                                    Style</a></li>
+                                                                            <li><a class="dropdown-item"
+                                                                                    href="element-accordions.html">Accordion</a>
+                                                                            </li>
+                                                                            <li><a class="dropdown-item"
+                                                                                    href="element-flash-deal.html">Flash
+                                                                                    Deal</a></li>
+                                                                            <li><a class="dropdown-item"
+                                                                                    href="element-product-category.html">Product
+                                                                                    Category</a></li>
+                                                                            <li><a class="dropdown-item"
+                                                                                    href="element-countdown.html">Fact
+                                                                                    Counter</a></li>
+                                                                        </ul>
+                                                                    </li>
+                                                                    <li class="nav-item"><a class="nav-link"
+                                                                            href="contact.html">Contact</a></li>
+                                                                </ul>
+                                                                <a href="#"
+                                                                    class="p-20 d-block bg-secondary text-primary text-uppercase font-600 hover-text-primary">Buy
+                                                                    now!</a>
+                                                            </div>
+                                                        </div>
+                                                        <div class="tab-pane fade" id="pills-push-categories"
+                                                            role="tabpanel" aria-labelledby="pills-push-categories-tab">
+                                                            <div class="categories-menu">
+                                                                <ul class="menu">
+                                                                    <li
+                                                                        class="menu-item-has-children unicode-megamenu-dropdown unicode-megamenu-item-full-width">
+                                                                        <a href="#">Women's Fashion</a>
+                                                                        <div class="unicode-megamenu-wrapper" style="background-image: url(assets/images/banner/49.png); background-size: cover;
+																		background-position:0px;">
+                                                                            <div class="unicode-megamenu-holder">
+                                                                                <div class="row row-cols-3">
+                                                                                    <div class="col">
+                                                                                        <ul
+                                                                                            class="unicode-menu-element unicode-megamenu-list">
+                                                                                            <li class="menu-item">
+                                                                                                <a class="nav-link"
+                                                                                                    href="#"
+                                                                                                    title="Top wear">
+                                                                                                    <span>Top
+                                                                                                        Clothing</span></a>
+                                                                                                <ul
+                                                                                                    class="unicode-sub-megamenu">
+                                                                                                    <li
+                                                                                                        class="menu-item">
+                                                                                                        <a class="nav-link"
+                                                                                                            href="#"
+                                                                                                            title="Tops">
+                                                                                                            <span>Tops</span>
+                                                                                                        </a>
+                                                                                                    </li>
+                                                                                                    <li
+                                                                                                        class="menu-item">
+                                                                                                        <a class="nav-link"
+                                                                                                            href="#"
+                                                                                                            title="T-Shirts">
+                                                                                                            <span>T-Shirts</span>
+                                                                                                        </a>
+                                                                                                    </li>
+                                                                                                    <li
+                                                                                                        class="menu-item">
+                                                                                                        <a class="nav-link"
+                                                                                                            href="#"
+                                                                                                            title="Shirts">
+                                                                                                            <span>Shirts</span></a>
+                                                                                                    </li>
+                                                                                                    <li
+                                                                                                        class="menu-item">
+                                                                                                        <a class="nav-link"
+                                                                                                            href="#"
+                                                                                                            title="Jeans & Jeggings">
+                                                                                                            <span>Jeans
+                                                                                                                &
+                                                                                                                Jeggings</span>
+                                                                                                        </a>
+                                                                                                    </li>
+                                                                                                    <li
+                                                                                                        class="menu-item">
+                                                                                                        <a class="nav-link"
+                                                                                                            href="#"
+                                                                                                            title="Trousers & Capris">
+                                                                                                            <span>Trousers
+                                                                                                                &
+                                                                                                                Capris</span>
+                                                                                                        </a>
+                                                                                                    </li>
+                                                                                                </ul>
+                                                                                            </li>
+                                                                                        </ul>
+                                                                                        <ul
+                                                                                            class="unicode-menu-element unicode-megamenu-list">
+                                                                                            <li class="menu-item"> <a
+                                                                                                    class="nav-link"
+                                                                                                    href="#"
+                                                                                                    title="Fusion Wear"><span>Fusion
+                                                                                                        Wear</span></a>
+                                                                                                <ul
+                                                                                                    class="unicode-sub-megamenu">
+                                                                                                    <li
+                                                                                                        class="menu-item">
+                                                                                                        <a class="nav-link"
+                                                                                                            href="#"
+                                                                                                            title="Sweaters & Sweatshirts">
+                                                                                                            <span>Sweaters
+                                                                                                                &
+                                                                                                                Sweatshirts</span>
+                                                                                                        </a>
+                                                                                                    </li>
+                                                                                                    <li
+                                                                                                        class="menu-item">
+                                                                                                        <a class="nav-link"
+                                                                                                            href="#"
+                                                                                                            title="Coats & Blazers">
+                                                                                                            <span>Coats
+                                                                                                                &
+                                                                                                                Blazers</span>
+                                                                                                        </a>
+                                                                                                    </li>
+                                                                                                    <li
+                                                                                                        class="menu-item">
+                                                                                                        <a class="nav-link"
+                                                                                                            href="#"
+                                                                                                            title="Jackets & Waistcoats">
+                                                                                                            <span>Jackets
+                                                                                                                &
+                                                                                                                Waistcoats</span>
+                                                                                                        </a>
+                                                                                                    </li>
+                                                                                                    <li
+                                                                                                        class="menu-item">
+                                                                                                        <a class="nav-link"
+                                                                                                            href="#"
+                                                                                                            title="Shorts & Skirts">
+                                                                                                            <span>Shorts
+                                                                                                                &
+                                                                                                                Skirts</span>
+                                                                                                        </a>
+                                                                                                    </li>
+                                                                                                    <li
+                                                                                                        class="menu-item">
+                                                                                                        <a class="nav-link"
+                                                                                                            href="#"
+                                                                                                            title="Camisoles & Slips">
+                                                                                                            <span>Camisoles
+                                                                                                                &
+                                                                                                                Slips</span>
+                                                                                                        </a>
+                                                                                                    </li>
+                                                                                                </ul>
+                                                                                            </li>
+                                                                                        </ul>
+                                                                                    </div>
+                                                                                    <div class="col">
+                                                                                        <ul
+                                                                                            class="unicode-menu-element unicode-megamenu-list">
+                                                                                            <li class="menu-item">
+                                                                                                <a class="nav-link"
+                                                                                                    href="#"
+                                                                                                    title="Sports & Active Wear">
+                                                                                                    <span>Sports &
+                                                                                                        Active
+                                                                                                        Wear</span> </a>
+                                                                                                <ul
+                                                                                                    class="unicode-sub-megamenu">
+                                                                                                    <li
+                                                                                                        class="menu-item">
+                                                                                                        <a class="nav-link"
+                                                                                                            href="#"
+                                                                                                            title="Clothing">
+                                                                                                            <span>Clothing</span>
+                                                                                                        </a>
+                                                                                                    </li>
+                                                                                                    <li
+                                                                                                        class="menu-item">
+                                                                                                        <a class="nav-link"
+                                                                                                            href="#"
+                                                                                                            title="Footwear">
+                                                                                                            <span>Footwear</span>
+                                                                                                        </a>
+                                                                                                    </li>
+                                                                                                    <li
+                                                                                                        class="menu-item">
+                                                                                                        <a class="nav-link"
+                                                                                                            href="#"
+                                                                                                            title="T-Shirts">
+                                                                                                            <span>T-Shirts</span>
+                                                                                                        </a>
+                                                                                                    </li>
+                                                                                                    <li
+                                                                                                        class="menu-item">
+                                                                                                        <a class="nav-link"
+                                                                                                            href="#"
+                                                                                                            title="Sports Accessories">
+                                                                                                            <span>Sports
+                                                                                                                Accessories</span>
+                                                                                                        </a>
+                                                                                                    </li>
+                                                                                                    <li
+                                                                                                        class="menu-item">
+                                                                                                        <a class="nav-link"
+                                                                                                            href="#"
+                                                                                                            title="Sports Equipment">
+                                                                                                            <span>Sports
+                                                                                                                Equipment</span>
+                                                                                                        </a>
+                                                                                                    </li>
+                                                                                                </ul>
+                                                                                            </li>
+                                                                                        </ul>
+                                                                                        <ul
+                                                                                            class="unicode-menu-element unicode-megamenu-list">
+                                                                                            <li class="menu-item">
+                                                                                                <a class="nav-link"
+                                                                                                    href="#"
+                                                                                                    title="Lingerie & Sleepwear">
+                                                                                                    <span>Lingerie &
+                                                                                                        Sleepwear</span>
+                                                                                                </a>
+                                                                                                <ul
+                                                                                                    class="unicode-sub-megamenu">
+                                                                                                    <li
+                                                                                                        class="menu-item">
+                                                                                                        <a class="nav-link"
+                                                                                                            href="#"
+                                                                                                            title="Bras & Lingerie Sets">
+                                                                                                            <span>Bras &
+                                                                                                                Lingerie
+                                                                                                                Sets</span>
+                                                                                                        </a>
+                                                                                                    </li>
+                                                                                                    <li
+                                                                                                        class="menu-item">
+                                                                                                        <a class="nav-link"
+                                                                                                            href="#"
+                                                                                                            title="Briefs">
+                                                                                                            <span>Briefs</span>
+                                                                                                        </a>
+                                                                                                    </li>
+                                                                                                    <li
+                                                                                                        class="menu-item">
+                                                                                                        <a class="nav-link"
+                                                                                                            href="#"
+                                                                                                            title="Shapewear">
+                                                                                                            <span>Shapewear</span>
+                                                                                                        </a>
+                                                                                                    </li>
+                                                                                                    <li
+                                                                                                        class="menu-item">
+                                                                                                        <a class="nav-link"
+                                                                                                            href="#"
+                                                                                                            title="Sleepwear & Loungewear">
+                                                                                                            <span>Sleepwear
+                                                                                                                &
+                                                                                                                Loungewear</span>
+                                                                                                        </a>
+                                                                                                    </li>
+                                                                                                    <li
+                                                                                                        class="menu-item">
+                                                                                                        <a class="nav-link"
+                                                                                                            href="#"
+                                                                                                            title="Camisoles & Thermals">
+                                                                                                            <span>Camisoles
+                                                                                                                &
+                                                                                                                Thermals</span>
+                                                                                                        </a>
+                                                                                                    </li>
+                                                                                                </ul>
+                                                                                            </li>
+                                                                                        </ul>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </li>
+                                                                    <li
+                                                                        class="menu-item-has-children unicode-megamenu-dropdown unicode-megamenu-item-full-width">
+                                                                        <a href="#">Men's Fashion</a>
+                                                                        <div class="unicode-megamenu-wrapper">
+                                                                            <div class="unicode-megamenu-holder">
+                                                                                <div class="row row-cols-3">
+                                                                                    <div class="col">
+                                                                                        <ul
+                                                                                            class="unicode-menu-element unicode-megamenu-list">
+                                                                                            <li class="menu-item">
+                                                                                                <a class="nav-link"
+                                                                                                    href="#"
+                                                                                                    title="Top wear">
+                                                                                                    <span>Top
+                                                                                                        Clothing</span></a>
+                                                                                                <ul
+                                                                                                    class="unicode-sub-megamenu">
+                                                                                                    <li
+                                                                                                        class="menu-item">
+                                                                                                        <a class="nav-link"
+                                                                                                            href="#"
+                                                                                                            title="Tops">
+                                                                                                            <span>Tops</span>
+                                                                                                        </a>
+                                                                                                    </li>
+                                                                                                    <li
+                                                                                                        class="menu-item">
+                                                                                                        <a class="nav-link"
+                                                                                                            href="#"
+                                                                                                            title="T-Shirts">
+                                                                                                            <span>T-Shirts</span>
+                                                                                                        </a>
+                                                                                                    </li>
+                                                                                                    <li
+                                                                                                        class="menu-item">
+                                                                                                        <a class="nav-link"
+                                                                                                            href="#"
+                                                                                                            title="Shirts">
+                                                                                                            <span>Shirts</span></a>
+                                                                                                    </li>
+                                                                                                    <li
+                                                                                                        class="menu-item">
+                                                                                                        <a class="nav-link"
+                                                                                                            href="#"
+                                                                                                            title="Jeans & Jeggings">
+                                                                                                            <span>Jeans
+                                                                                                                &
+                                                                                                                Jeggings</span>
+                                                                                                        </a>
+                                                                                                    </li>
+                                                                                                    <li
+                                                                                                        class="menu-item">
+                                                                                                        <a class="nav-link"
+                                                                                                            href="#"
+                                                                                                            title="Trousers & Capris">
+                                                                                                            <span>Trousers
+                                                                                                                &
+                                                                                                                Capris</span>
+                                                                                                        </a>
+                                                                                                    </li>
+                                                                                                </ul>
+                                                                                            </li>
+                                                                                        </ul>
+                                                                                        <ul
+                                                                                            class="unicode-menu-element unicode-megamenu-list">
+                                                                                            <li class="menu-item"> <a
+                                                                                                    class="nav-link"
+                                                                                                    href="#"
+                                                                                                    title="Fusion Wear"><span>Fusion
+                                                                                                        Wear</span></a>
+                                                                                                <ul
+                                                                                                    class="unicode-sub-megamenu">
+                                                                                                    <li
+                                                                                                        class="menu-item">
+                                                                                                        <a class="nav-link"
+                                                                                                            href="#"
+                                                                                                            title="Sweaters & Sweatshirts">
+                                                                                                            <span>Sweaters
+                                                                                                                &
+                                                                                                                Sweatshirts</span>
+                                                                                                        </a>
+                                                                                                    </li>
+                                                                                                    <li
+                                                                                                        class="menu-item">
+                                                                                                        <a class="nav-link"
+                                                                                                            href="#"
+                                                                                                            title="Coats & Blazers">
+                                                                                                            <span>Coats
+                                                                                                                &
+                                                                                                                Blazers</span>
+                                                                                                        </a>
+                                                                                                    </li>
+                                                                                                    <li
+                                                                                                        class="menu-item">
+                                                                                                        <a class="nav-link"
+                                                                                                            href="#"
+                                                                                                            title="Jackets & Waistcoats">
+                                                                                                            <span>Jackets
+                                                                                                                &
+                                                                                                                Waistcoats</span>
+                                                                                                        </a>
+                                                                                                    </li>
+                                                                                                    <li
+                                                                                                        class="menu-item">
+                                                                                                        <a class="nav-link"
+                                                                                                            href="#"
+                                                                                                            title="Shorts & Skirts">
+                                                                                                            <span>Shorts
+                                                                                                                &
+                                                                                                                Skirts</span>
+                                                                                                        </a>
+                                                                                                    </li>
+                                                                                                    <li
+                                                                                                        class="menu-item">
+                                                                                                        <a class="nav-link"
+                                                                                                            href="#"
+                                                                                                            title="Camisoles & Slips">
+                                                                                                            <span>Camisoles
+                                                                                                                &
+                                                                                                                Slips</span>
+                                                                                                        </a>
+                                                                                                    </li>
+                                                                                                </ul>
+                                                                                            </li>
+                                                                                        </ul>
+                                                                                    </div>
+                                                                                    <div class="col">
+                                                                                        <ul
+                                                                                            class="unicode-menu-element unicode-megamenu-list">
+                                                                                            <li class="menu-item">
+                                                                                                <a class="nav-link"
+                                                                                                    href="#"
+                                                                                                    title="Sports & Active Wear">
+                                                                                                    <span>Sports &
+                                                                                                        Active
+                                                                                                        Wear</span> </a>
+                                                                                                <ul
+                                                                                                    class="unicode-sub-megamenu">
+                                                                                                    <li
+                                                                                                        class="menu-item">
+                                                                                                        <a class="nav-link"
+                                                                                                            href="#"
+                                                                                                            title="Clothing">
+                                                                                                            <span>Clothing</span>
+                                                                                                        </a>
+                                                                                                    </li>
+                                                                                                    <li
+                                                                                                        class="menu-item">
+                                                                                                        <a class="nav-link"
+                                                                                                            href="#"
+                                                                                                            title="Footwear">
+                                                                                                            <span>Footwear</span>
+                                                                                                        </a>
+                                                                                                    </li>
+                                                                                                    <li
+                                                                                                        class="menu-item">
+                                                                                                        <a class="nav-link"
+                                                                                                            href="#"
+                                                                                                            title="T-Shirts">
+                                                                                                            <span>T-Shirts</span>
+                                                                                                        </a>
+                                                                                                    </li>
+                                                                                                    <li
+                                                                                                        class="menu-item">
+                                                                                                        <a class="nav-link"
+                                                                                                            href="#"
+                                                                                                            title="Sports Accessories">
+                                                                                                            <span>Sports
+                                                                                                                Accessories</span>
+                                                                                                        </a>
+                                                                                                    </li>
+                                                                                                    <li
+                                                                                                        class="menu-item">
+                                                                                                        <a class="nav-link"
+                                                                                                            href="#"
+                                                                                                            title="Sports Equipment">
+                                                                                                            <span>Sports
+                                                                                                                Equipment</span>
+                                                                                                        </a>
+                                                                                                    </li>
+                                                                                                </ul>
+                                                                                            </li>
+                                                                                        </ul>
+                                                                                        <ul
+                                                                                            class="unicode-menu-element unicode-megamenu-list">
+                                                                                            <li class="menu-item">
+                                                                                                <a class="nav-link"
+                                                                                                    href="#"
+                                                                                                    title="Lingerie & Sleepwear">
+                                                                                                    <span>Lingerie &
+                                                                                                        Sleepwear</span>
+                                                                                                </a>
+                                                                                                <ul
+                                                                                                    class="unicode-sub-megamenu">
+                                                                                                    <li
+                                                                                                        class="menu-item">
+                                                                                                        <a class="nav-link"
+                                                                                                            href="#"
+                                                                                                            title="Bras & Lingerie Sets">
+                                                                                                            <span>Bras &
+                                                                                                                Lingerie
+                                                                                                                Sets</span>
+                                                                                                        </a>
+                                                                                                    </li>
+                                                                                                    <li
+                                                                                                        class="menu-item">
+                                                                                                        <a class="nav-link"
+                                                                                                            href="#"
+                                                                                                            title="Briefs">
+                                                                                                            <span>Briefs</span>
+                                                                                                        </a>
+                                                                                                    </li>
+                                                                                                    <li
+                                                                                                        class="menu-item">
+                                                                                                        <a class="nav-link"
+                                                                                                            href="#"
+                                                                                                            title="Shapewear">
+                                                                                                            <span>Shapewear</span>
+                                                                                                        </a>
+                                                                                                    </li>
+                                                                                                    <li
+                                                                                                        class="menu-item">
+                                                                                                        <a class="nav-link"
+                                                                                                            href="#"
+                                                                                                            title="Sleepwear & Loungewear">
+                                                                                                            <span>Sleepwear
+                                                                                                                &
+                                                                                                                Loungewear</span>
+                                                                                                        </a>
+                                                                                                    </li>
+                                                                                                    <li
+                                                                                                        class="menu-item">
+                                                                                                        <a class="nav-link"
+                                                                                                            href="#"
+                                                                                                            title="Camisoles & Thermals">
+                                                                                                            <span>Camisoles
+                                                                                                                &
+                                                                                                                Thermals</span>
+                                                                                                        </a>
+                                                                                                    </li>
+                                                                                                </ul>
+                                                                                            </li>
+                                                                                        </ul>
+                                                                                    </div>
+                                                                                    <div class="col">
+                                                                                        <img src="assets/images/banner/13.png"
+                                                                                            alt="">
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </li>
+                                                                    <li class="menu-item-has-children"><a
+                                                                            href="#">Phones & Telecommunications</a>
+                                                                    </li>
+                                                                    <li class="menu-item-has-children"><a
+                                                                            href="#">Computer, Office & Security</a>
+                                                                    </li>
+                                                                    <li class="menu-item-has-children"><a
+                                                                            href="#">Consumer Electronics</a></li>
+                                                                    <li class="menu-item-has-children"><a
+                                                                            href="#">Jewelry & Watches</a></li>
+                                                                    <li class="menu-item-has-children"><a href="#">Home,
+                                                                            Pet & Appliances</a></li>
+                                                                    <li class="menu-item-has-children"><a href="#">Bags
+                                                                            & Shoes</a></li>
+                                                                    <li class="menu-item-has-children"><a href="#">Toys
+                                                                            , Kids & Babies</a></li>
+                                                                    <li class="menu-item-has-children"><a
+                                                                            href="#">Outdoor Fun & Sports</a></li>
+                                                                    <li class="menu-item-has-children"><a
+                                                                            href="#">Beauty, Health & Hair</a></li>
+                                                                    <li class="menu-item-has-children"><a href="#">Home
+                                                                            Improvement & Tools</a></li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </nav>
+                                    </div>
+                                    <a class="navbar-brand" href="#"><img class="nav-logo"
+                                            src="assets/images/logo/logo-new.png" alt="Image not found !"></a>
+                                </div>
+                            </div>
+                            <div class="col-xxl-3 col-xl-4 col-lg-3 col-9 order-lg-3">
+                                <ul class="top-links ms-auto list-color-white d-flex justify-content-end" id="for-mob">
+
+                                    <li><button onclick="location=`{% url 'login_page' %}`"><i class="fa-solid fa-chart-line"></i> Free
+                                            Listing</button></li>
+
+                                    <li><button type="button" onclick="location=`{% url 'login_page' %}`"
+                                            id="log-in-btn-mob">Login/Signup</button></li>
+                                </ul>
+                            </div>
+                            <div class="col-xxl-7 col-xl-6 col-lg-6 col-12 order-lg-2">
+                                <div class="product-search-one">
+                                    <form class="form-inline search-pill-shape" action="#" method="post">
+                                        <span><i class="fa fa-map-marker"
+                                                style="margin-left: 20px; font-size: larger;"></i></span><input
+                                            type="text" class="form-control search-field" name="search"
+                                            placeholder="Delhi" style="margin-left:-10px;">
+
+                                        <input type="text" class="form-control search-field" name="search"
+                                            placeholder="Search For Bike/ Car.."
+                                            style="margin-left:-34px; border-left: 2px solid #0000005c; border-radius:0px!important;">
+
+                                        <!-- <div class="select-appearance-none">
+                                        <select class="form-control">
+                                                <option selected>All Categories</option>
+                                                <option value="1">One</option>
+                                                <option value="2">Two</option>
+                                                <option value="3">Three</option>
+                                            </select>
+                                    </div> -->
+                                        <button type="submit" name="submit" class="search-submit"><i
+                                                class="flaticon-search flat-mini text-white"></i></button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <!--==================== Header Section End ====================-->
+
+            <!-- breadcrumb -->
+            <!-- <div class="full-row py-5">
+            <div class="container">
+                <div class="row text-left">
+                    <div class="col-12">
+                        <h3 class="mb-2">Shop List Right Sidebar 3</h3>
+                    </div>
+                    <div class="col-12">
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb mb-0 d-inline-flex bg-transparent p-0">
+                                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                <li class="breadcrumb-item"><a href="#">Shop</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Shop List Right Sidebar 3</li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+            <!-- breadcrumb -->
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <img src="{{cat_image.image.url}}" style="width:auto;object-fit: contain;">
+                    </div>
+                </div>
+            </div>
+
+            <div class="full-row pt-10">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-3 order-lg-2">
+                            <div id="sidebar" class="widget-title-bordered-full bg-white p-30 border border-gray">
+                                <div id="woocommerce_product_categories-4"
+                                    class="widget woocommerce widget_product_categories widget-toggle">
+                                    <h2 class="widget-title">Product categories</h2>
+                                    <ul class="product-categories">
+                                        <li class="cat-item cat-parent">
+                                            <a href="#">Restaurant<span class="count">(7)</span></a>
+                                            <!-- <ul class="children">
+                                            <li class="cat-item"><a href="#">Belts <span class="count">(1)</span></a></li>
+                                            <li class="cat-item"><a href="#">Hats & Caps <span class="count">(1)</span></a></li>
+                                            <li class="cat-item"><a href="#">Socks <span class="count">(2)</span></a></li>
+                                            <li class="cat-item"><a href="#">Sunglasses <span class="count">(2)</span></a></li>
+                                            <li class="cat-item"><a href="#">Wallets <span class="count">(1)</span></a></li>
+                                        </ul> -->
+                                        </li>
+                                        <li class="cat-item cat-parent"><a href="#">Hotels<span
+                                                    class="count">(4)</span></a>
+                                            <!-- <ul class="children">
+                                            <li class="cat-item"><a href="#">Handbags <span class="count">(1)</span></a></li>
+                                            <li class="cat-item"><a href="#">Laptop Bag <span class="count">(1)</span></a></li>
+                                            <li class="cat-item"><a href="#">Luggage & Travel <span class="count">(1)</span></a></li>
+                                            <li class="cat-item"><a href="#">Trolley Bag <span class="count">(1)</span></a></li>
+                                        </ul> -->
+                                        </li>
+                                        <li class="cat-item cat-parent"><a href="#">Beauty spa <span
+                                                    class="count">(2)</span></a>
+                                            <!-- <ul class="children">
+                                            <li class="cat-item"><a href="#">Beauty Accessory <span class="count">(1)</span></a></li>
+                                            <li class="cat-item"><a href="#">Makeup Kit <span class="count">(1)</span></a></li>
+                                        </ul> -->
+                                        </li>
+                                        <li class="cat-item cat-parent"><a href="#">Pg / Hotel <span
+                                                    class="count">(4)</span></a>
+                                            <!-- <ul class="children">
+                                            <li class="cat-item"><a href="#">Anklets <span class="count">(1)</span></a></li>
+                                            <li class="cat-item"><a href="#">Bracelets <span class="count">(2)</span></a></li>
+                                            <li class="cat-item"><a href="#">Earrings <span class="count">(1)</span></a></li>
+                                            <li class="cat-item"><a href="#">Necklaces <span class="count">(1)</span></a></li>
+                                            <li class="cat-item"><a href="#">Pearl Jewelry <span class="count">(1)</span></a></li>
+                                        </ul> -->
+                                        </li>
+                                        <li class="cat-item cat-parent">
+                                            <a href="#">Real Estate <span class="count">(7)</span></a>
+                                            <!-- <ul class="children">
+                                            <li class="cat-item"><a href="#">Belts <span class="count">(1)</span></a></li>
+                                            <li class="cat-item"><a href="#">Hats & Caps <span class="count">(1)</span></a></li>
+                                            <li class="cat-item"><a href="#">Socks <span class="count">(2)</span></a></li>
+                                            <li class="cat-item"><a href="#">Sunglasses <span class="count">(2)</span></a></li>
+                                            <li class="cat-item"><a href="#">Wallets <span class="count">(1)</span></a></li>
+                                        </ul> -->
+                                        </li>
+                                        <li class="cat-item cat-parent"><a href="#">Dentist<span
+                                                    class="count">(4)</span></a>
+                                            <!-- <ul class="children">
+                                            <li class="cat-item"><a href="#">Handbags <span class="count">(1)</span></a></li>
+                                            <li class="cat-item"><a href="#">Laptop Bag <span class="count">(1)</span></a></li>
+                                            <li class="cat-item"><a href="#">Luggage & Travel <span class="count">(1)</span></a></li>
+                                            <li class="cat-item"><a href="#">Trolley Bag <span class="count">(1)</span></a></li>
+                                        </ul> -->
+                                        </li>
+                                        <li class="cat-item cat-parent"><a href="#">Cars<span
+                                                    class="count">(2)</span></a>
+                                            <!-- <ul class="children">
+                                            <li class="cat-item"><a href="#">Beauty Accessory <span class="count">(1)</span></a></li>
+                                            <li class="cat-item"><a href="#">Makeup Kit <span class="count">(1)</span></a></li>
+                                        </ul> -->
+                                        </li>
+                                        <li class="cat-item cat-parent"><a href="#">Motor Bike<span
+                                                    class="count">(4)</span></a>
+                                            <!-- <ul class="children">
+                                            <li class="cat-item"><a href="#">Anklets <span class="count">(1)</span></a></li>
+                                            <li class="cat-item"><a href="#">Bracelets <span class="count">(2)</span></a></li>
+                                            <li class="cat-item"><a href="#">Earrings <span class="count">(1)</span></a></li>
+                                            <li class="cat-item"><a href="#">Necklaces <span class="count">(1)</span></a></li>
+                                            <li class="cat-item"><a href="#">Pearl Jewelry <span class="count">(1)</span></a></li>
+                                        </ul> -->
+                                        </li>
+                                        <li class="cat-item cat-parent"><a href="#">Truck<span
+                                                    class="count">(4)</span></a>
+                                            <!-- <ul class="children">
+                                            <li class="cat-item"><a href="#">Anklets <span class="count">(1)</span></a></li>
+                                            <li class="cat-item"><a href="#">Bracelets <span class="count">(2)</span></a></li>
+                                            <li class="cat-item"><a href="#">Earrings <span class="count">(1)</span></a></li>
+                                            <li class="cat-item"><a href="#">Necklaces <span class="count">(1)</span></a></li>
+                                            <li class="cat-item"><a href="#">Pearl Jewelry <span class="count">(1)</span></a></li>
+                                        </ul> -->
+                                        </li>
+                                        <li class="cat-item cat-parent"><a href="#">Bicycle<span
+                                                    class="count">(4)</span></a>
+                                            <!-- <ul class="children">
+                                            <li class="cat-item"><a href="#">Anklets <span class="count">(1)</span></a></li>
+                                            <li class="cat-item"><a href="#">Bracelets <span class="count">(2)</span></a></li>
+                                            <li class="cat-item"><a href="#">Earrings <span class="count">(1)</span></a></li>
+                                            <li class="cat-item"><a href="#">Necklaces <span class="count">(1)</span></a></li>
+                                            <li class="cat-item"><a href="#">Pearl Jewelry <span class="count">(1)</span></a></li>
+                                        </ul> -->
+                                        </li>
+                                        <li class="cat-item cat-parent"><a href="#">Rikshaw<span
+                                                    class="count">(4)</span></a>
+                                            <!-- <ul class="children">
+                                            <li class="cat-item"><a href="#">Anklets <span class="count">(1)</span></a></li>
+                                            <li class="cat-item"><a href="#">Bracelets <span class="count">(2)</span></a></li>
+                                            <li class="cat-item"><a href="#">Earrings <span class="count">(1)</span></a></li>
+                                            <li class="cat-item"><a href="#">Necklaces <span class="count">(1)</span></a></li>
+                                            <li class="cat-item"><a href="#">Pearl Jewelry <span class="count">(1)</span></a></li>
+                                        </ul> -->
+                                        </li>
+                                        <li class="cat-item cat-parent"><a href="#">Salon<span
+                                                    class="count">(4)</span></a>
+                                            <!-- <ul class="children">
+                                            <li class="cat-item"><a href="#">Anklets <span class="count">(1)</span></a></li>
+                                            <li class="cat-item"><a href="#">Bracelets <span class="count">(2)</span></a></li>
+                                            <li class="cat-item"><a href="#">Earrings <span class="count">(1)</span></a></li>
+                                            <li class="cat-item"><a href="#">Necklaces <span class="count">(1)</span></a></li>
+                                            <li class="cat-item"><a href="#">Pearl Jewelry <span class="count">(1)</span></a></li>
+                                        </ul> -->
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div id="bigbazar-price-filter-list-1"
+                                    class="widget bigbazar_widget_price_filter_list widget_layered_nav widget-toggle">
+                                    <h2 class="widget-title">Filter by Price</h2>
+                                    <ul class="price-filter-list">
+                                        <li class="wc-layered-nav-term">
+                                            <span class="woocommerce-Price-amount amount">
+                                                <bdi><span class="woocommerce-Price-currencySymbol">$</span>0.00</bdi>
+                                            </span> -
+                                            <span class="woocommerce-Price-amount amount">
+                                                <bdi><span class="woocommerce-Price-currencySymbol">$</span>50.00</bdi>
+                                            </span>
+                                        </li>
+                                        <li class="wc-layered-nav-term">
+                                            <span class="woocommerce-Price-amount amount">
+                                                <bdi><span class="woocommerce-Price-currencySymbol">$</span>50.00</bdi>
+                                            </span> -
+                                            <span class="woocommerce-Price-amount amount">
+                                                <bdi><span class="woocommerce-Price-currencySymbol">$</span>100.00</bdi>
+                                            </span>
+                                        </li>
+                                        <li class="wc-layered-nav-term">
+                                            <span class="woocommerce-Price-amount amount">
+                                                <bdi><span class="woocommerce-Price-currencySymbol">$</span>100.00</bdi>
+                                            </span> -
+                                            <span class="woocommerce-Price-amount amount">
+                                                <bdi><span class="woocommerce-Price-currencySymbol">$</span>200.00</bdi>
+                                            </span>
+                                        </li>
+                                        <li class="wc-layered-nav-term">
+                                            <span class="woocommerce-Price-amount amount">
+                                                <bdi><span class="woocommerce-Price-currencySymbol">$</span>200.00</bdi>
+                                            </span> -
+                                            <span class="woocommerce-Price-amount amount">
+                                                <bdi><span class="woocommerce-Price-currencySymbol">$</span>400.00</bdi>
+                                            </span>
+                                        </li>
+                                        <li class="wc-layered-nav-term">
+                                            <span class="woocommerce-Price-amount amount">
+                                                <bdi><span class="woocommerce-Price-currencySymbol">$</span>400.00</bdi>
+                                            </span> -
+                                            <span class="woocommerce-Price-amount amount">
+                                                <bdi><span class="woocommerce-Price-currencySymbol">$</span>800.00</bdi>
+                                            </span>
+                                        </li>
+                                        <li class="wc-layered-nav-term">
+                                            <span class="woocommerce-Price-amount amount">
+                                                <bdi><span class="woocommerce-Price-currencySymbol">$</span>800.00
+                                                    +</bdi>
+                                            </span>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <div id="bigbazar-attributes-filter-4"
+                                    class="widget woocommerce bigbazar-attributes-filter widget_layered_nav widget-toggle">
+                                    <h2 class="widget-title"> Filter By Brands</h2>
+                                    <ul class="swatch-filter-pa_brands">
+                                        <li class="wc-layered-nav-term">
+                                            <span class="nav-title">Easy</span>
+                                            <span class="count">(45)</span>
+                                        </li>
+                                        <li class="wc-layered-nav-term">
+                                            <span class="nav-title">Costaco</span>
+                                            <span class="count">(25)</span>
+                                        </li>
+                                        <li class="wc-layered-nav-term">
+                                            <span class="nav-title">Arong</span>
+                                            <span class="count">(5)</span>
+                                        </li>
+                                        <li class="wc-layered-nav-term">
+                                            <span class="nav-title">Lotto</span>
+                                            <span class="count">(3)</span>
+                                        </li>
+                                        <li class="wc-layered-nav-term">
+                                            <span class="nav-title">Hema</span>
+                                            <span class="count">(4)</span>
+                                        </li>
+                                        <li class="wc-layered-nav-term">
+                                            <span class="nav-title">Tultext</span>
+                                            <span class="count">(2)</span>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <div class="mt-30">
+                                        <img class="img-fluid w-100" src="assets/images/banner/1logo-new.png" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <style>
+                            .product.type-product {
+                                position: relative;
+                                padding: 2px 5px;
+                                margin-bottom: 25px;
+                            }
+
+                            #desktopview {
+                                display: block !important;
+                            }
+
+                            #mobileview {
+                                display: none !important;
+                            }
+
+                            @media(max-width:767px) {
+                                #desktopview {
+                                    display: none !important;
+                                }
+
+                                #mobileview {
+                                    display: block !important;
+                                }
+
+                                .enquirysend-section {
+                                    background-color: white;
+                                    box-shadow: 0px 2px 2px gainsboro;
+                                    border-radius: #e1e1e1;
+                                    padding: 10px;
+                                    border-radius: 10px;
+                                }
+
+                                #appointment {
+                                    margin-top: 10px;
+                                }
+
+                                #appointment button {
+                                    width: 100%;
+                                    background-color: navy;
+                                    color: white;
+                                    padding: 5px 0px;
+                                    border-radius: 5px;
+                                }
+
+                                .rating-wrap i {
+                                    font-size: 10px;
+                                    color: #f76d1d;
+                                }
+                            }
+                        </style>
+                        <div class="col-lg-9 ">
+                            <div
+                                class="products-header d-flex justify-content-between align-items-center py-10 px-20 bg-white md-mt-30">
+                                <div class="products-header-left d-flex align-items-center">
+                                    <h6 class="woocommerce-products-header__title page-title">All Category</h6>
+                                    <div class="woocommerce-result-count"> ( Showing 1 – 30 products of 23945 products )
+                                    </div>
+                                </div>
+                                <div class="products-header-right">
+                                    <div class="product-show">
+                                        <span class="h6 font-700 text-secondary mb-0">Show:</span>
+                                        <select class="show-number">
+                                            <option value="1">6</option>
+                                            <option value="2">9</option>
+                                            <option value="3" selected="selected">12</option>
+                                            <option value="4">24</option>
+                                            <option value="5">36</option>
+                                            <option value="6">48</option>
+                                        </select>
+                                    </div>
+                                    <form class="woocommerce-ordering" method="get">
+                                        <select name="orderby" class="orderby" aria-label="Shop order">
+                                            <option value="1" selected="selected">Default sorting</option>
+                                            <option value="2">Sort by popularity</option>
+                                            <option value="3">Sort by average rating</option>
+                                            <option value="4">Sort by latest</option>
+                                            <option value="5">Sort by price: low to high</option>
+                                            <option value="6">Sort by price: high to low</option>
+                                        </select>
+                                        <input type="hidden" name="paged" value="1">
+                                        <input type="hidden" name="shop-page-layout" value="left-sidebar">
+                                    </form>
+                                    <div class="products-view">
+                                        <a class="grid-view active" data-shopview="grid-view"
+                                            href="#shop-grid-right-sidebar-3.html"><i
+                                                class="flaticon-menu-1 flat-mini"></i></a>
+                                        <a class="list-view" data-shopview="list-view"
+                                            href="#shop-list-right-sidebar-3.html"><i
+                                                class="flaticon-list flat-mini"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="div" id="mobileview">
+                                <div class="enquirysend-section" style="margin-top: 10px;">
+                                    <div class="row">
+                                        <div class="col-md-3 col-4" style="padding-right: 0px;">
+                                            <div class="dr">
+                                                <img src="assets/images/dr.webp" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-9 col-8">
+                                            <div class="developer">
+                                                <img src="assets/images/verified.png" alt="" style="width: 50px;">
+                                                <h6 class="mt-1 mb-0"><i class="fa-solid fa-thumbs-up "
+                                                        style="font-size:11px;color: white; padding:6px; border-radius: 25%; background-color: green;margin-right: 5px;"></i>
+                                                    Paradise Car Accessories</h6>
+                                                <div class="rating-wrap">
+                                                    <a><i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i> <span
+                                                            style="margin-left: 5px;font-style: 10px;">181
+                                                            Rating</span></a>
+                                                </div>
+                                                <p style="margin-bottom: 0px;">Poorvi Marg Vasant Vihar</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row" id="appointment">
+                                        <div class="col-md-6 col-6">
+                                            <button>Call Now</button>
+                                        </div>
+                                        <div class="col-md-6 col-6">
+                                            <button style="background-color: rgb(22, 162, 22);">Enquire Now</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="enquirysend-section" style="margin-top: 10px;">
+                                    <div class="row">
+                                        <div class="col-md-3 col-4" style="padding-right: 0px;">
+                                            <div class="dr">
+                                                <img src="assets/images/dr.webp" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-9 col-8">
+                                            <div class="developer">
+                                                <img src="assets/images/verified.png" alt="" style="width: 50px;">
+                                                <h6 class="mt-1 mb-0"><i class="fa-solid fa-thumbs-up "
+                                                        style="font-size:11px;color: white; padding:6px; border-radius: 25%; background-color: green;margin-right: 5px;"></i>Arvinda
+                                                    Electronics & Accessories</h6>
+                                                <div class="rating-wrap">
+                                                    <a><i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i> <span
+                                                            style="margin-left: 5px;font-style: 10px;">181
+                                                            Rating</span></a>
+                                                </div>
+                                                <p style="margin-bottom: 0px;">Poorvi Marg Vasant Vihar</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row" id="appointment">
+                                        <div class="col-md-6 col-6">
+                                            <button>Call Now</button>
+                                        </div>
+                                        <div class="col-md-6 col-6">
+                                            <button style="background-color: rgb(22, 162, 22);"
+                                                onclick="location='get_appointment.html'">Enquire Now</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="enquirysend-section" style="margin-top: 10px;">
+                                    <div class="row">
+                                        <div class="col-md-3 col-4" style="padding-right: 0px;">
+                                            <div class="dr">
+                                                <img src="assets/images/dr.webp" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-9 col-8">
+                                            <div class="developer">
+                                                <img src="assets/images/verified.png" alt="" style="width: 50px;">
+                                                <h6 class="mt-1 mb-0"><i class="fa-solid fa-thumbs-up "
+                                                        style="font-size:11px;color: white; padding:6px; border-radius: 25%; background-color: green;margin-right: 5px;"></i>Shiv
+                                                    Auto Accessories
+                                                </h6>
+                                                <div class="rating-wrap">
+                                                    <a><i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i> <span
+                                                            style="margin-left: 5px;font-style: 10px;">181
+                                                            Rating</span></a>
+                                                </div>
+                                                <p style="margin-bottom: 0px;">Poorvi Marg Vasant Vihar</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row" id="appointment">
+                                        <div class="col-md-6 col-6">
+                                            <button>Call Now</button>
+                                        </div>
+                                        <div class="col-md-6 col-6">
+                                            <button style="background-color: rgb(22, 162, 22);">Enquire Now</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="enquirysend-section" style="margin-top: 10px;">
+                                    <div class="row">
+                                        <div class="col-md-3 col-4" style="padding-right: 0px;">
+                                            <div class="dr">
+                                                <img src="assets/images/dr.webp" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-9 col-8">
+                                            <div class="developer">
+                                                <img src="assets/images/verified.png" alt="" style="width: 50px;">
+                                                <h6 class="mt-1 mb-0"><i class="fa-solid fa-thumbs-up "
+                                                        style="font-size:11px;color: white; padding:6px; border-radius: 25%; background-color: green;margin-right: 5px;"></i>Pankaj
+                                                    Automobiles</h6>
+                                                <div class="rating-wrap">
+                                                    <a><i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i> <span
+                                                            style="margin-left: 5px;font-style: 10px;">181
+                                                            Rating</span></a>
+                                                </div>
+                                                <p style="margin-bottom: 0px;">Poorvi Marg Vasant Vihar</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row" id="appointment">
+                                        <div class="col-md-6 col-6">
+                                            <button>Call Now</button>
+                                        </div>
+                                        <div class="col-md-6 col-6">
+                                            <button style="background-color: rgb(22, 162, 22);">Enquire Now</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="showing-products pt-30 pb-50 border-2 border-bottom border-gray"
+                                id="desktopview">
+                                <div
+                                    class="row row-cols-xxl-1 row-cols-md-6 row-cols-1 product-style-3 product-list e-bg-white e-hover-image-zoom g-1">
+                                    {% for vendor_service in shop_list %}
+                                    <div class="col">
+                                        <div class="product type-product">
+                                            <div class="product-wrapper">
+                                                <div class="product-image">
+                                                    <a href="#" class="woocommerce-LoopProduct-link"><img
+                                                            src="{{ vendor_service.shop.image.url }}"
+                                                            alt="Product Image"></a>
+                                                    <div class="wishlist-view">
+                                                        <div class="quickview-button">
+                                                            <a class="quickview-btn" href="#quick-view"
+                                                                data-bs-toggle="tooltip" data-bs-placement="top"
+                                                                title="" data-bs-original-title="Quick View"
+                                                                aria-label="Quick View">Quick View</a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="product-labels">
+                                                        <div class="shape1-badge3"><span>New</span></div>
+                                                    </div>
+                                                </div>
+                                                <div class="product-info">
+                                                    <div class="you" style="display:flex;">
+                                                        <div class="first">
+                                                            <i class="fa-solid fa-thumbs-up"
+                                                                style="font-size:20px;color: white; padding:6px; border-radius: 25%; background-color: green;"></i>
+                                                        </div>
+                                                        <div class="second"
+                                                            style="margin-left:15px;margin-top:2px; font-size: large;font-weight: 800; color: black;">
+                                                            <p>{{ vendor_service.shop.name }}</p>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="product-price">
+                                                        <div class="you" style="display:flex;">
+                                                            <div class="third">
+                                                                <button class="btn btn-primary btn-x-sm"
+                                                                    style="padding: 0px 10px; height:40px; border-radius: 10px; width:auto; color: white; background-color: green;font-weight: 700;margin-left:-3px;"><span
+                                                                        style="font-size:18px;">4.5</span></button>
+                                                            </div>
+                                                            <div class="rating-wrap">
+                                                                <a><i class="fas fa-star"
+                                                                        style="font-size: larger;margin-top:10px;margin-left:7px;color: orangered;"></i>
+                                                                    <i class="fas fa-star"
+                                                                        style="font-size: larger;margin-top:10px;margin-left:7px;color: orangered;"></i>
+                                                                    <i class="fas fa-star"
+                                                                        style="font-size: larger;margin-top:10px;margin-left:7px;color: orangered;"></i>
+                                                                    <i class="fas fa-star"
+                                                                        style="font-size: larger;margin-top:10px;margin-left:7px;color: orangered;"></i><span
+                                                                        style="font-weight: 700; color: black;">
+                                                                        1,285</span></a>
+                                                            </div>
+                                                            <div class="forth">
+                                                                <img src="assets/images/trust.jpeg"
+                                                                    style=" width:80px; height:auto; margin-left: 5px; border-radius: 10px; margin-top:5px;">
+                                                            </div>
+                                                            <div class="fifth">
+                                                                <img src="assets/images/verified.png"
+                                                                    style=" width:auto; height:40px; margin-left: 3px; border-radius: 10px; margin-top:-3px;">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="product-price" style="margin-top:8px;">
+                                                        <div class="you" style="display:flex;">
+                                                            <div class="sixth">
+                                                                <i class="fa fa-map-marker"
+                                                                    style="font-size:26px;color: black;margin-top:5px;"></i>
+                                                            </div>
+                                                            <div class="seventh">
+                                                                <p
+                                                                    style="font-size: larger;margin-left:10px;color: black;font-weight: 600;margin-top:5px;">
+                                                                    {{ vendor_service.shop.address }}</p>
+                                                            </div>
+                                                            <!-- <div class="eight">
+                                                                <i class="fa-solid fa-stethoscope"
+                                                                    style="font-size:20px;color:orangered;margin-top: 10px; margin-left:5px;"></i>
+                                                            </div> -->
+                                                            <div class="nine">
+                                                                <p
+                                                                    style="font-weight: 700;color: green; margin-left:5px;margin-top: 5px;">
+                                                                    "300 Products"&nbsp; Available</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="product-price" style="margin-top:8px;">
+                                                        <div class="you" style="display:flex;">
+                                                            <div class="ten">
+                                                                <button class="btn btn-lg btn-success"
+                                                                    style="font-size: larger;font-weight: 700; background-color: green;"><span
+                                                                        style="margin-right:10px;"><i
+                                                                            class="fa-solid fa-phone-volume"></i></span>{{ vendor_service.shop.user.phone_number }}</button>
+                                                            </div>
+                                                            <div class="eleven" style="margin-left:5px;">
+
+                                                                <a class="btn btn-lg btn-success" href="{% url 'service_enquiry' vendor_service.id %}"
+                                                                    style="font-size: larger;font-weight: 700; background-color: blue;"
+                                                                    onclick="location='get_appointment.html'">Enquir Now</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                            <!--==================== Recomended For You Section Start ====================-->
+
+                            <!--==================== Recomended For You Section End ====================-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--==================== Newslatter Section Start ====================-->
+            <div class="full-row bg-secondary py-30">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-3 col-md-6">
+                            <div class="d-flex align-items-center h-100">
+                                <h4 class="text-primary mb-0">Sign up to newslatter</h4>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <div class="d-flex align-items-center h-100">
+                                <span class="text-white font-600 font-fifteen">.... and receive $5 coupon for first
+                                    shopping</span>
+                            </div>
+                        </div>
+                        <div class="col-lg-5 col-md-12">
+                            <form action="#" class="subscribe-form position-relative md-mt-20">
+                                <input class="form-control rounded-pill mb-0" type="text" placeholder="Enter your email"
+                                    aria-label="Address">
+                                <button class="btn btn-primary rounded-right-pill text-dark" type="submit">Send</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--==================== Newslatter Section End ====================-->
+
+            <!--==================== Service Info Section Start ====================-->
+            <div class="full-row bg-white">
+                <div class="container">
+                    <div class="row row-cols-lg-5 row-cols-sm-2 row-cols-1 g-0 gy-3 gy-lg-0">
+                        <div class="col">
+                            <div class="gray-right-line-one px-3 md-my-10 d-flex">
+                                <i class="flaticon-life-insurance flat-medium text-secondary"></i>
+                                <div class="ml-10">
+                                    <h5 class="mb-1"><a href="#"
+                                            class="text-dark hover-text-primary transation-this">Great Value</a></h5>
+                                    <p>We offer competitive prices on our product range.</p>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="gray-right-line-one px-3 md-my-10 d-flex">
+                                <i class="flaticon-airplane flat-medium text-secondary"></i>
+                                <div class="ml-10">
+                                    <h5 class="mb-1"><a href="#"
+                                            class="text-dark hover-text-primary transation-this">World Wide Delevery</a>
+                                    </h5>
+                                    <p>we ship product to over 200 countries & regions.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="gray-right-line-one px-3 md-my-10 d-flex">
+                                <i class="flaticon-package flat-medium text-secondary"></i>
+                                <div class="ml-10">
+                                    <h5 class="mb-1"><a href="#"
+                                            class="text-dark hover-text-primary transation-this">Safe Payment</a></h5>
+                                    <p>Pay with the world’s most secure payment methods</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="gray-right-line-one px-3 md-my-10 d-flex">
+                                <i class="flaticon-shopping-1 flat-medium text-secondary"></i>
+                                <div class="ml-10">
+                                    <h5 class="mb-1"><a href="#"
+                                            class="text-dark hover-text-primary transation-this">Shop With
+                                            Confidence</a></h5>
+                                    <p>Our Buyer Protection covers your purchase.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="gray-right-line-one px-3 md-my-10 d-flex">
+                                <i class="flaticon-24-hours flat-medium text-secondary"></i>
+                                <div class="ml-10">
+                                    <h5 class="mb-1"><a href="#"
+                                            class="text-dark hover-text-primary transation-this">24/7 Help Center</a>
+                                    </h5>
+                                    <div class="font-500">
+                                        <p>Round-the-clock assistance for a smooth shopping experience.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--==================== Service Info Section End ====================-->
+
+            <!--==================== Footer Section Start ====================-->
+            <footer class="full-row bg-light">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-4 col-md-6">
+                            <div class="footer-widget mb-5">
+                                <div class="footer-logo mb-4">
+                                    <a href="#"><img src="assets/images/logo/logo-new.png" alt="Image not found!" /></a>
+                                </div>
+                                <div class="widget-ecommerce-contact">
+                                    <span class="font-medium font-500 text-dark">Got Questions ? Call us 24/7!</span>
+                                    <div class="text-dark h4 font-400 mt-2">(090) 8001-8588, (090) 874 548</div>
+                                    <span class="h6 mt-5 text-secondary">Address :</span>
+                                    <div class="text-general">Collins Street West, Victoria 8007, <br> Australia</div>
+                                </div>
+                            </div>
+                            <div class="footer-widget media-widget mb-5">
+                                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="#"><i class="fab fa-google-plus-g"></i></a>
+                                <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <div class="footer-widget category-widget mb-5">
+                                <h3 class="widget-title mb-4">Quick Links</h3>
+                                <ul>
+                                    <li><a href="#">About us</a></li>
+                                    <li><a href="#">Investor Relations</a></li>
+                                    <li><a href="#">We're hiring</a></li>
+                                    <li><a href="#">Customer Care</a></li>
+                                    <li><a href="#">Free Listing</a></li>
+                                    <li><a href="#">What's New</a></li>
+                                    <li><a href="#">Report a Bug</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <div class="footer-widget category-widget mb-5">
+                                <h3 class="widget-title mb-4 xs-mx-none">&nbsp;</h3>
+                                <ul>
+                                    <li><a href="#">B2B Sitemap</a></li>
+                                    <li><a href="#">Sitemap</a></li>
+                                    <li><a href="#">Contact</a></li>
+                                    <li><a href="#">Media</a></li>
+                                    <li><a href="#">FAQ</a></li>
+                                    <li><a href="#">Store Directory</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-md-6">
+                            <div class="footer-widget widget-nav mb-5">
+                                <h3 class="widget-title mb-4">Customer Support</h3>
+                                <ul>
+                                    <li><a href="#">My Account</a></li>
+                                    <li><a href="#">Track your Order</a></li>
+                                    <li><a href="#">Wishlist</a></li>
+                                    <li><a href="#">Customer Service</a></li>
+                                    <li><a href="#">Returns/Exchange</a></li>
+                                    <li><a href="#">FAQs</a></li>
+                                    <li><a href="#">Product Support</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+            <!--==================== Footer Section End ====================-->
+
+            <!--==================== Copyright Section Start ====================-->
+            <div class="full-row copyright bg-gray py-3">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <span class="text-dark sm-mb-10 d-block">© 2021 BDShop All right reserved</span>
+
+                        </div>
+                        <div class="col-md-6">
+                            <ul class="list-ml-30 d-flex align-items-center justify-content-md-end">
+                                <li>
+                                    <a href="#"><img src="assets/images/cards/1.png" alt=""></a>
+                                </li>
+                                <li>
+                                    <a href="#"><img src="assets/images/cards/2.png" alt=""></a>
+                                </li>
+                                <li>
+                                    <a href="#"><img src="assets/images/cards/3.png" alt=""></a>
+                                </li>
+                                <li>
+                                    <a href="#"><img src="assets/images/cards/4.png" alt=""></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--==================== Copyright Section End ====================-->
+
+            <!-- Scroll to top -->
+            <a href="#" class="bg-primary text-white" id="scroll"><i class="fa fa-angle-up"></i></a>
+            <!-- End Scroll To top -->
+
+            <!--============== Modal Start ==============-->
+            <div class="overlay-dark modal fade quick-view-modal" id="quick-view">
+                <div class="modal-dialog modal-dialog-centered modal-xl">
+                    <div class="modal-content">
+                        <div class="close view-close">
+                            <span class="flaticon-cancel"></span>
+                        </div>
+                        <div class="modal-body property-block summary p-3">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="e-hover-image-zoom e-image-bg-light">
+                                        <div class="product type-product">
+                                            <div class="product-wrapper">
+                                                <div class="product-image">
+                                                    <a href="#" class="woocommerce-LoopProduct-link"><img
+                                                            src="assets/images/products/squire-2.png"
+                                                            alt="Product Image"></a>
+                                                    <ul class="position-absolute quick-meta">
+                                                        <li><a href="#" data-bs-toggle="tooltip" data-bs-placement="top"
+                                                                title="" data-bs-original-title="Transfer"
+                                                                aria-label="Transfer"><i
+                                                                    class="flaticon-transfer flat-mini"></i></a></li>
+                                                        <li><a href="#" data-bs-toggle="tooltip" data-bs-placement="top"
+                                                                title="" data-bs-original-title="Wishlist"
+                                                                aria-label="Wishlist"><i
+                                                                    class="flaticon-like flat-mini"></i></a></li>
+                                                        <li><a href="#" data-bs-toggle="tooltip" data-bs-placement="top"
+                                                                title="" data-bs-original-title="Share"
+                                                                aria-label="Share"><i
+                                                                    class="flaticon-share flat-mini"></i></a></li>
+                                                        <li><a href="#" data-bs-toggle="tooltip" data-bs-placement="top"
+                                                                title="" data-bs-original-title="Print"
+                                                                aria-label="Print"><i
+                                                                    class="flaticon-printer flat-mini"></i></a></li>
+                                                    </ul>
+                                                    <div class="product-labels">
+                                                        <div class="shape1-badge3"><span>New</span></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="e-hover-image-zoom e-image-bg-light">
+                                        <div class="product type-product">
+                                            <div class="product-wrapper">
+                                                <div class="product-info">
+                                                    <div class="product-cats"><a href="#">Apparel Accessories</a></div>
+                                                    <h3 class="product-title"><a href="#">Body Compression Therapy
+                                                            Gloves</a></h3>
+                                                    <div class="product-price">
+                                                        <div class="price">
+                                                            <ins>$15.00 - 22.92</ins>
+                                                        </div>
+                                                        <span
+                                                            class="text-white font-mini px-2 rounded product-status ms-5 my-1 bg-primary"><i
+                                                                class="fas fa-check"></i> Available</span>
+                                                    </div>
+                                                    <div class="shipping-cost"><span>+Shipping: </span>
+                                                        <span>$1.00</span>
+                                                    </div>
+                                                    <div class="shipping-feed-back">
+                                                        <div class="star-rating">
+                                                            <div class="rating-wrap">
+                                                                <a href="#"><i class="fas fa-star"></i><span>
+                                                                        4.9</span></a>
+                                                            </div>
+                                                            <div class="rating-counts-wrap">
+                                                                <a href="#">(543)</a>
+                                                            </div>
+                                                        </div>
+                                                        <div class="sold-items">
+                                                            <span>142</span> <span>Sold</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="product-offers mt-3">
+                                                        <ul class="product-offers-list">
+                                                            <li class="product-offer-item"> <strong>Special Price
+                                                                </strong>Get extra 19% off (price inclusive of discount)
+                                                            </li>
+                                                            <li class="product-offer-item"> <strong>Bank Offer </strong>
+                                                                10% instant discount on VISA Cards</li>
+                                                            <li class="product-offer-item"> <strong>No cost EMI
+                                                                    $49/month.</strong> Standard EMI also available</li>
+                                                        </ul>
+                                                    </div>
+                                                    <h5 class="text-secondary my-3">Description</h5>
+                                                    <p>Bibendum purus aenean mus aenean eu interdum nonummy ipsum ad
+                                                        consequat. Dui eros donec faucibus convallis tempus rutrum id
+                                                        donec mus hymenaeos placerat congue curae mauris turpis</p>
+                                                    <div class="short-description d-flex">
+                                                        <span class="me-4"><b>Highlights:</b></span>
+                                                        <div class="short-description">
+                                                            <ul class="list-style-tick">
+                                                                <li>Regular Fit.</li>
+                                                                <li>Full sleeves.</li>
+                                                                <li>Machine wash, tumble dry.</li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                    <div class="hover-area">
+                                                        <div class="compare-button">
+                                                            <a href="#">Compare</a>
+                                                        </div>
+                                                        <div class="cart-button">
+                                                            <a href="#">Add to Cart</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--============== Modal End ==============-->
+
+        </div>
+{%endblock%}

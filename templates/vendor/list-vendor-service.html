@@ -1,0 +1,87 @@
+{% extends 'vendor/vendor-base.html' %}
+
+{% block title %}Category List{% endblock %}
+
+{% block content %}
+{%load static%}
+
+<div class="main-content-inner">
+    <!-- main-content-wrap -->
+    <div class="main-content-wrap">
+        <div class="flex items-center flex-wrap justify-between gap20 mb-27">
+            <h3>Purchased service</h3>
+            <ul class="breadcrumbs flex items-center flex-wrap justify-start gap10">
+                <li>
+                    <a href="{% url 'vendor_service_create' %}" class="btn btn-lg btn-primary">Add New Service</a>
+                </li>
+            </ul>
+        </div>
+        <!-- product-list -->
+        <div class="wg-box">
+
+            <div class="flex items-center justify-between gap10 flex-wrap">
+                <div class="wg-filter flex-grow">
+
+                    <form class="form-search">
+                        <fieldset class="name">
+                            <input type="text" placeholder="Search here..." class=""
+                                name="name" tabindex="2" value="" aria-required="true"
+                                required="">
+                        </fieldset>
+                        <div class="button-submit">
+                            <button class="" type="submit"><i
+                                    class="icon-search"></i></button>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+            <div class="wg-table table-product-list">
+                <ul class="table-title flex gap20 mb-14">
+                    <li>
+                        <div class="body-title">Shop</div>
+                    </li>
+                    <li>
+                        <div class="body-title">Category</div>
+                    </li>
+                    <li>
+                        <div class="body-title">Service Name</div>
+                    </li>
+                    <li>
+                        <div class="body-title">Price</div>
+                    </li>
+                    <li>
+                        <div class="body-title">Paid</div>
+                    </li>
+                    
+                </ul>
+                <ul class="flex flex-column">
+                    {% for v_service in vendor_services %}
+                    <li class="product-item gap14">
+                        <div class="image no-bg">
+                            
+                        </div>
+                        <div class="flex items-center justify-between gap20 flex-grow">
+                            <div class="name">
+                                <a href="#" class="body-title-2">{{ v_service.shop.name }}</a>
+                            </div>
+                            
+                            <div class="body-text">{{ v_service.service.category.name }}</div>
+                            <div class="body-text">{{ v_service.service.name }}</div>
+                            <div class="body-text">{{ v_service.service.price }}</div>
+                            <div class="body-text">{{v_service.paid }}</div>
+                        </div>
+                    </li>
+                    {% endfor %}
+
+
+                </ul>
+            </div>
+            <div class="divider"></div>
+
+        </div>
+        <!-- /product-list -->
+    </div>
+    <!-- /main-content-wrap -->
+</div>
+{% endblock %}

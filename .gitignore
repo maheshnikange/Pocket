@@ -1,0 +1,4 @@
+*.pyc
+login_env/
+assests/
+uploads/

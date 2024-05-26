@@ -1,0 +1,256 @@
+{%load static%}
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+
+    <head>
+
+        <meta charset="utf-8">
+        <title>Dashoard</title>
+
+        <meta name="author" content="themesflat.com">
+
+        <!-- Mobile Specific Metas -->
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+        <!-- Theme Style -->
+        <link rel="stylesheet" type="text/css" href="{% static 'dashboard/css/animate.min.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'dashboard/css/animation.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'dashboard/css/bootstrap.css'%}">
+        <link rel="stylesheet" type="text/css" href="{% static 'dashboard/css/bootstrap-select.min.css'%}">
+        <link rel="stylesheet" type="text/css" href="{% static 'dashboard/css/style.css'%}">
+
+
+        <!-- Font -->
+        <link rel="stylesheet" href="{% static 'dashboard/font/fonts.css' %}">
+
+        <!-- Icon -->
+        <link rel="stylesheet" href="{% static 'dashboard/icon/style.css' %}">
+
+        <!-- Favicon and Touch Icons  -->
+        <link rel="shortcut icon" href="images/favicon.png">
+        <link rel="apple-touch-icon-precomposed" href="images/favicon.png">
+
+    </head>
+
+    <body class="body">
+
+        <!-- #wrapper -->
+        <div id="wrapper">
+            <!-- #page -->
+            <div id="page" class="">
+                <!-- layout-wrap -->
+                <div class="layout-wrap">
+                    <div class="section-menu-left">
+                        <div class="box-logo">
+                            <a href="../index.html" id="site-logo-inner">
+                                <img class="" alt="" src="{% static 'dashboard/images/logo-new.png' %}">
+                            </a>
+                            <div class="button-show-hide">
+                                <i class="icon-menu-left"></i>
+                            </div>
+                        </div>
+                        <div class="center">
+                            <div class="center-item">
+
+                                <ul class="menu-list">
+                                    <li class="menu-item has-children active">
+                                        <a href="javascript:void(0);" class="menu-item-button">
+                                            <div class="icon"><i class="icon-grid"></i></div>
+                                            <div class="text">Dashboard</div>
+                                        </a>
+
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="center-item">
+
+                                <ul class="menu-list">
+                                    <li class="menu-item">
+                                        <a href="{% url 'shop_list' %}" class="menu-item-button">
+                                            <div class="icon"><i class="icon-layers"></i></div>
+                                            <div class="text">Shops</div>
+                                        </a>
+                                    </li>
+                                    <li class="menu-item  ">
+                                        <a href="{% url 'vendor_service_list' %}" class="menu-item-button">
+                                            <div class="icon"><i class="icon-shopping-cart"></i></div>
+                                            <div class="text">Serives</div>
+                                        </a>
+                                    </li>
+                                    <li class="menu-item">
+                                        <a href="{% url 'get_enquiries_for_user' %}" class="menu-item-button">
+                                            <div class="icon"><i class="icon-box"></i></div>
+                                            <div class="text">Enquiries</div>
+                                        </a>
+
+                                    </li>
+                                    <li class="menu-item ">
+                                        <a href="javascript:void(0);" class="menu-item-button">
+                                            <div class="icon"><i class="icon-user"></i></div>
+                                            <div class="text">Invoices</div>
+                                        </a>
+
+                                    </li>
+
+                                    <li class="menu-item">
+                                        <a href="javascript:void(0);" class="menu-item-button">
+                                            <div class="icon"><i class="icon-user-plus"></i></div>
+                                            <div class="text">Setting</div>
+                                        </a>
+
+                                    </li>
+                                    <!-- <li class="menu-item">
+                                        <a href="javascript:void(0);" class="menu-item-button">
+                                            <div class="icon"><i class="icon-user-plus"></i></div>
+                                            <div class="text">Log Management</div>
+                                        </a>
+
+                                    </li>
+                                    <li class="menu-item">
+                                        <a href="javascript:void(0);" class="menu-item-button">
+                                            <div class="icon"><i class="icon-map-pin"></i></div>
+                                            <div class="text">Backlisted</div>
+                                        </a>
+
+                                    </li> -->
+
+
+
+                                </ul>
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <!-- /section-menu-left -->
+                    <!-- section-content-right -->
+                    <div class="section-content-right">
+                        <!-- header-dashboard -->
+                        <div class="header-dashboard">
+                            <div class="wrap">
+                                <div class="header-left">
+                                    <a href="index.html">
+                                        <img class="" id="logo_header_mobile" alt="" src="{% static 'dashboard/images/logo/logo.png' %}"
+                                            data-light="images/logo/logo.png" data-dark="images/logo/logo-dark.png"
+                                            data-width="154px" data-height="52px" data-retina="images/logo/logo@2x.png">
+                                    </a>
+                                    <div class="button-show-hide">
+                                        <i class="icon-menu-left"></i>
+                                    </div>
+                                    <form class="form-search flex-grow">
+                                        <fieldset class="name">
+                                            <input type="text" placeholder="Search here..." class="show-search"
+                                                name="name" tabindex="2" value="" aria-required="true" required="">
+                                        </fieldset>
+                                        <div class="button-submit">
+                                            <button class="" type="submit"><i class="icon-search"></i></button>
+                                        </div>
+
+                                    </form>
+                                </div>
+                                <div class="header-grid">
+
+
+
+                                    <div class="header-item button-zoom-maximize">
+                                        <div class="">
+                                            <i class="icon-maximize"></i>
+                                        </div>
+                                    </div>
+
+                                    <div class="popup-wrap user type-header">
+                                        <div class="dropdown">
+                                            <button class="btn btn-secondary dropdown-toggle" type="button"
+                                                id="dropdownMenuButton3" data-bs-toggle="dropdown"
+                                                aria-expanded="false">
+                                                <span class="header-user wg-user">
+                                                    <span class="flex flex-column">
+                                                        <span class="body-title mb-2">{{request.user.username}}</span>
+                                                        <span class="text-tiny">Vendor</span>
+                                                    </span>
+                                                </span>
+                                            </button>
+                                            <ul class="dropdown-menu dropdown-menu-end has-content"
+                                                aria-labelledby="dropdownMenuButton3">
+                                                <li>
+                                                    <a href="profile.html" class="user-item">
+                                                        <div class="icon">
+                                                            <i class="icon-user"></i>
+                                                        </div>
+                                                        <div class="body-title-2">Account</div>
+                                                    </a>
+                                                </li>
+
+
+                                                <li>
+                                                    <a href="{% url 'user_logout' %}" class="user-item">
+                                                        <div class="icon">
+                                                            <i class="icon-log-out"></i>
+                                                        </div>
+                                                        <div class="body-title-2">Log out</div>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /header-dashboard -->
+                        <style>
+                            .wg-table.table-product-list>* {
+                                min-width: 1115px;
+                            }
+
+                            .dashboard__sidebar::-webkit-scrollbar {
+                                height: 4px;
+                                width: 4px;
+                            }
+
+
+                            .wg-table::-webkit-scrollbar {
+                                width: 10px;
+                                height: 10px;
+                                border-radius: 10px
+                            }
+
+                            .wg-table::-webkit-scrollbar-track {
+                                background: rgba(252, 0, 18, 0.1);
+                                box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+                                -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+                                border-radius: 10px
+                            }
+
+                            .wg-table::-webkit-scrollbar-thumb {
+                                background-color: #033f79;
+                                background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.3) 25%, transparent 20%, transparent 50%, rgba(255, 255, 255, 0.3) 50%, rgba(255, 255, 255, 0.3) 75%, transparent 75%, transparent);
+                                border-radius: 10px
+                            }
+
+                            @media(max-width:767px) {
+                                .wg-table.table-product-list>* {
+                                    min-width: 1100px;
+                                }
+
+                            }
+                        </style>
+                        <!-- main-content -->
+    <!-- Main Content -->
+    <div class="main-content">
+        {% block content %}{% endblock %}
+    </div>
+        <!-- Javascript -->
+        <script src="{% static 'dashboard/js/jquery.min.js' %}"></script>
+        <script src="{% static 'dashboard/js/bootstrap.min.js' %}"></script>
+        <script src="{% static 'dashboard/js/bootstrap-select.min.js' %}"></script>
+        <script src="{% static 'dashboard/js/zoom.js' %}"></script>
+        <script src="{% static 'dashboard/js/switcher.js' %}"></script>
+        <script src="{% static 'dashboard/js/theme-settings.js' %}"></script>
+        <script src="{% static 'dashboard/js/main.js' %}"></script>
+
+
+    </body>
+
+</html>

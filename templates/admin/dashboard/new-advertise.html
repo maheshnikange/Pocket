@@ -1,0 +1,89 @@
+{% extends 'admin/dashboard/admin-base.html' %}
+
+{% block title %}Service List{% endblock %}
+
+{% block content %}
+
+<div class="main-content-inner">
+    <!-- main-content-wrap -->
+    <div class="main-content-wrap">
+        <div class="flex items-center flex-wrap justify-between gap20 mb-27">
+            <h3>Category infomation</h3>
+            <ul class="breadcrumbs flex items-center flex-wrap justify-start gap10">
+                <li>
+                    <a href="index.html"><div class="text-tiny">Dashboard</div></a>
+                </li>
+                <li>
+                    <i class="icon-chevron-right"></i>
+                </li>
+                <li>
+                    <a href="#"><div class="text-tiny">Category</div></a>
+                </li>
+                <li>
+                    <i class="icon-chevron-right"></i>
+                </li>
+                <li>
+                    <div class="text-tiny">New category</div>
+                </li>
+            </ul>
+        </div>
+        <!-- new-category -->
+        <div class="wg-box">
+            <form action="{% if advertise.id %}{% url 'advertise_update' advertise.id %}{% else %}{% url 'advertise_create' %}{% endif %}" method="post" class="form-new-product form-style-1" enctype="multipart/form-data">
+                {% csrf_token %}
+                
+                <fieldset>
+                    <div class="body-title">Select type <span class="tf-color-1">*</span></div>
+                    <select name="image_type" class="flex-grow" required="">
+                        <option value="" {% if not advertise.image_type %}selected{% endif %}>Select type</option>
+                        <option value="slider" {% if advertise.image_type == 'slider' %}selected{% endif %}>Slider</option>
+                        <option value="static" {% if advertise.image_type == 'static' %}selected{% endif %}>Static</option>
+                    </select>
+                </fieldset>
+                <fieldset>
+                    <div class="body-title">Select location <span class="tf-color-1">*</span></div>
+                    <select name="location" class="flex-grow" required="">
+                        <option value="" {% if not advertise.location %}selected{% endif %}>Select location</option>
+                        <option value="category" {% if advertise.location == 'category' %}selected{% endif %}>Category</option>
+                        <option value="service" {% if advertise.location == 'service' %}selected{% endif %}>Service</option>
+                        <option value="dashboard" {% if advertise.location == 'dashboard' %}selected{% endif %}>Dashboard</option>
+                    </select>
+                </fieldset>
+                <fieldset>
+                    <div class="body-title">Upload images <span class="tf-color-1">*</span></div>
+                    <div class="upload-image flex-grow">
+                        <div class="item up-load">
+                            <label class="uploadfile" for="myFile">
+                                <span class="icon">
+                                    <i class="icon-upload-cloud"></i>
+                                </span>
+                                <span class="body-text">Drop your images here or select <span class="tf-color">click to browse</span></span>
+                                <input type="file" id="myFile" name="content">
+                                <input type="hidden" id="myFile" name="name" value="advertise_image">
+                            </label>
+                        </div>
+                    </div>
+                </fieldset>
+                <div class="bot">
+                    <div></div>
+                    <button class="tf-button w208" type="submit">Save</button>
+                </div>
+            </form>
+            
+            
+            
+        </div>
+        <!-- /new-category -->
+    </div>
+<!-- /main-content-wrap -->
+<!-- bottom-page -->
+<div class="bottom-page">
+    <div class="body-text">Copyright © 2024 Remos. Design with</div>
+    <i class="icon-heart"></i>
+    <div class="body-text">by <a href="https://themeforest.net/user/themesflat/portfolio">Themesflat</a> All rights reserved.</div>
+</div>
+<!-- /bottom-page -->
+</div>
+
+
+{% endblock %}

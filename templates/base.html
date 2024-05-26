@@ -1,0 +1,142 @@
+
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <!-- Meta Tag -->
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+
+        <meta name="author" content="root">
+        <title>Pocket Service</title>
+
+        <!-- Favicon -->
+        <link rel="shortcut icon" href="assets/images/favicon.png">
+
+        <!-- Google Font -->
+        <link
+            href="https://fonts.googleapis.com/css2?family=Jost:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
+            rel="stylesheet">
+
+        <!--  CSS Style -->
+        <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+        <link rel="stylesheet" href="{% static 'css/all.min.css' %}">
+        <link rel="stylesheet" href="{% static 'css/animate.min.css' %}">
+        <link rel="stylesheet" href="{% static 'css/webfonts/flaticon/flaticon.css' %}">
+        <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+        <link rel="stylesheet" href="{% static 'css/layerslider.css' %}">
+        <link rel="stylesheet" href="{% static 'css/template.css' %}">
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+        <link rel="stylesheet" href="{% static 'css/category/grocery-store.css' %}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    </head>
+
+    <body>
+        <div id="page_wrapper" class="bg-white">
+            <!--==================== Header Section Start ====================-->
+            <header class="ecommerce-header">
+                <div class="top-header font-400 d-none d-lg-block py-2 bg-light">
+                    <div class="container">
+                        <div class="row align-items-center">
+                            <div class="col-lg-4 sm-mx-none">
+                                <div class="d-flex align-items-center text-general">
+                                    <img class="nav-logo" src="{% static 'dashboard/images/logo-new.png' %}" alt="Image not found !">
+                                </div>
+                            </div>
+                            <div class="col-lg-8">
+                                <ul class="top-links ms-auto list-color-white d-flex justify-content-end">
+                                    <i class="flaticon-customer-service flat-medium me-2 text-dark"
+                                        style="margin-right:0px!important;"></i>
+                                    <li><a href="#" style="margin-top:13px;">Help & Support</a></li>
+                                    <a href="{% url 'login_page' %}" style="font-size: larger;margin-top:13px;"><i
+                                            class="fa-solid fa-chart-line"
+                                            style="color: black;margin-right:5px;"></i><span
+                                            style="color: #818181;margin-right:13px;">Free Listing</span></a>
+                                    <button class="btn btn-x-sm btn-primary"
+                                        style="border-radius: 10px; max-height: 40px; margin-top:7px;line-height: 20px; padding:0px 16px;"><a
+                                            href="{% url 'login_page' %}" style="font-weight: 700; font-size: larger;">Login / Sign
+                                            Up</a></button>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <style>
+                    #p {
+                        height: 35px;
+                        float: left;
+                        margin-right: 0.3em;
+                        margin-top: 0px;
+                        font-size: 30px;
+                        color: black;
+                        font-weight: 700;
+                    }
+
+                    #b {
+                        float: left;
+                        overflow: hidden;
+                        position: relative;
+                        height: 50px;
+                        font: normal 33px/46px Arial, sans-serif;
+
+                    }
+
+                    #span1 {
+                        display: inline-block;
+                        color: #f76d1d;
+                        position: relative;
+                        white-space: nowrap;
+                        top: 0;
+                        left: 0;
+                        -webkit-animation: move 5s;
+                        -webkit-animation-iteration-count: infinite;
+                        -webkit-animation-delay: 1s;
+                        font: normal 31px/46px !important;
+                        font-weight: 600;
+
+                    }
+
+                    @keyframes move {
+                        0% {
+                            top: 0px;
+                        }
+
+                        20% {
+                            top: -50px;
+                        }
+
+                        40% {
+                            top: -100px;
+                        }
+
+                        60% {
+                            top: -150px;
+                        }
+
+                        80% {
+                            top: -200px;
+                        }
+                    }
+                </style>
+            </header>
+        <div class="main-content">
+            {% block content %}{% endblock %}
+        </div>
+    
+
+    <script src="{% static 'dashboard/js/jquery.min.js' %}"></script>
+    <script src="{% static 'dashboard/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'dashboard/js/bootstrap-select.min.js' %}"></script>
+    <script src="{% static 'dashboard/js/zoom.js' %}"></script>
+    <script src="{% static 'dashboard/js/switcher.js' %}"></script>
+    <script src="{% static 'dashboard/js/theme-settings.js' %}"></script>
+    <script src="{% static 'dashboard/js/main.js' %}"></script>
+</body>
+</html>
